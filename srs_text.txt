@@ -1,0 +1,850 @@
+SecureOrg
+Secure Organizational Management System
+SOFTWARE REQUIREMENTS SPECIFICATION
+Version 1.0  |  9 November 2026
+Document item
+Value
+Project
+SecureOrg – Secure Organizational Management System
+Document
+Product-level Software Requirements Specification
+Course
+Computer System Security – Project One
+Institution
+Addis Ababa Science and Technology University
+Department
+Software Engineering
+Project type
+Individual academic software development project
+Status
+Initial baseline for implementation
+This document specifies the intended product behavior and verification criteria. It does not claim that any control has already been implemented.
+Document Control
+Version
+Date
+Owner
+Description
+1.0
+9 November 2026
+Student / project owner
+Initial SRS baseline
+Purpose and use
+This SRS is the implementation baseline for SecureOrg. Use requirement identifiers when designing APIs, database tables, screens, and tests. A feature is not complete merely because a screen exists: the behavior, server-side enforcement, failure paths, and evidence must also be tested.
+Contents
+1. Introduction
+2. Overall Product Description
+3. User Classes and Roles
+4. Scope and Boundaries
+5. Functional Requirements
+6. External Interface Requirements
+7. Data Requirements
+8. Non-Functional Requirements
+9. Use Cases and Workflows
+10. Acceptance and Verification
+11. Assumptions, Dependencies, Risks and Constraints
+12. Traceability to Lecturer's Specification
+13. Glossary and References
+Appendix A. Build Sequence
+Appendix B. Decisions to Freeze
+1. Introduction
+1.1 Purpose
+This Software Requirements Specification defines the requirements for SecureOrg, a secure web-based organizational management application. It specifies the product's purpose, users, scope, functions, interfaces, data, security and quality attributes, workflows, and acceptance tests. It is intended to guide analysis, architecture, implementation, testing, demonstration, and final documentation.
+1.2 Product vision
+SecureOrg gives an organization a central place to manage user accounts, roles, privileged-access approvals, security events, alerts, incidents, risks, and backup evidence. Security is a core product property: access is denied by default, users receive only permissions required for their responsibilities, privileged changes require independent approval, and security-relevant actions are recorded.
+1.3 Audience
+The student acting as product owner, analyst, developer, tester, and document maintainer.
+The course lecturer/supervisor assessing the project.
+Reviewers evaluating requirements, design decisions, implementation, and security evidence.
+Demonstration users acting as administrator, security officer, manager, or employee.
+1.4 Requirement language
+“Shall” means mandatory. “Should” means strongly recommended. “May” means optional. Priorities are Must, Should, and Could. Every requirement has a unique identifier for traceability.
+1.5 Source basis
+The security coverage is derived from the lecturer's Computer System Security – Project One document: Access Control and Authentication; Audit Trails and Logging; Data Backups; Application and Data Security Controls; Secure Development and Testing; Incident Response and Business Continuity; and Compliance and Governance. Product-level details and implementation decisions in this SRS are proposed design decisions for SecureOrg, not additional statements from the lecturer.
+2. Overall Product Description
+2.1 Product perspective
+SecureOrg is a new single-organization browser-based application. The React client communicates with a Node.js/Express REST API backed by PostgreSQL. The API is the security boundary. Client-side route guards and hidden buttons improve usability but never replace server-side authentication, authorization, validation, or data-access checks. The first release is not a multi-tenant SaaS platform.
+2.2 Objectives
+Provide secure registration/invitation, login, MFA, profile management, recovery, and session control.
+Enforce RBAC, least privilege, role lifecycle management, access reviews, and separation of duties.
+Record protected, attributable audit events and provide security monitoring and alerts.
+Provide backup, restore, and recovery evidence with defined RPO/RTO.
+Support incident tracking, risk management, policy acknowledgement, and security governance evidence.
+Demonstrate secure coding, testing, deployment, and operational procedures.
+2.3 Target technology baseline
+Layer
+Proposed baseline
+Frontend
+React + TypeScript; Material UI; responsive browser interface
+Backend
+Node.js + Express + TypeScript REST API
+Database
+PostgreSQL
+Data access
+Prisma ORM and safe parameterized database operations
+Authentication
+Secure HttpOnly cookie-based session/refresh credentials; CSRF protection; rotation and revocation
+Password hashing
+Argon2id preferred; documented secure bcrypt/scrypt fallback if necessary
+MFA
+TOTP-compatible authenticator application
+Testing
+Unit/integration tests, Postman, SAST/dependency checks, DAST where available
+Version control
+Git; reproducible setup and migration instructions
+2.4 Design principles
+Secure by default; deny unless explicitly permitted.
+Least privilege and separation of duties.
+Enforce security on the server for every protected request.
+Collect only information required by the product.
+Make important actions attributable, timestamped, and reviewable.
+Do not claim external integrations or enterprise-grade controls that have not been implemented and tested.
+Keep credentials and environment-specific secrets out of source control.
+3. User Classes and Roles
+The first release defines four baseline roles. Roles map to granular permissions. A user may hold multiple roles only where policy permits. Role names must not be hard-coded as the sole authorization mechanism.
+Role
+Responsibilities
+Permission summary
+Organization Administrator
+Manage organizational accounts and configuration.
+Create/deactivate users; assign standard roles; manage settings; view backup status. Cannot approve own privileged request.
+Security Officer
+Oversee security, access reviews, events, alerts, incidents, and risks.
+Read audit logs; investigate alerts; manage incidents/risks; approve eligible privileged requests independently.
+Department Manager
+Manage access and people within assigned organizational unit.
+View unit members; submit role-change requests; review unit access. Cannot approve own request.
+Employee
+Use authorized features and manage own account.
+Manage permitted profile fields; enroll MFA; submit access requests; report incidents.
+3.1 Initial permission matrix
+Capability
+Admin
+Security Officer
+Manager
+Employee
+Manage users
+Yes
+No by default
+Assigned unit only
+No
+Assign standard roles
+Yes
+No by default
+Request only
+No
+Approve privileged role request
+Independent approver only
+Yes, if not requester
+No
+No
+View audit logs
+Limited admin events
+Yes
+Unit-relevant if granted
+Own activity only
+Manage alerts/incidents
+No by default
+Yes
+Report/view own reports
+Report only
+Manage backup/restore
+Yes
+View status/audit
+No
+No
+Manage risks/policies
+No by default
+Yes
+Read/acknowledge
+Read/acknowledge
+Own profile/MFA
+Yes
+Yes
+Yes
+Yes
+This is the initial authorization baseline. Any permission not explicitly granted is denied. The requester must never approve their own privileged-role change.
+4. Scope and Boundaries
+4.1 In scope
+Account invitation/registration, verification, activation, login, logout, password change/reset, lockout, and session management.
+TOTP MFA enrollment, verification, recovery codes, and controlled MFA reset.
+User directory, profile and account status management, organizational-unit assignment, roles, and granular permissions.
+Privileged role-change requests, independent approval/rejection, expiry/revocation, and audit history.
+Audit event capture, protected access, tamper-evident hash chaining, search/filtering, dashboards, and selected alerts.
+Backup records, database backup/restore demonstration, restore verification, and operation audit history.
+Incident reporting/management, risk register, policy records, and acknowledgement evidence.
+Server-side validation, secure headers, API authentication/authorization, rate/size limits, safe errors, data classification, and retention procedures.
+4.2 Out of scope for Release 1
+Commercial SIEM integrations such as Splunk, Sentinel, or QRadar; Release 1 provides an internal event store and dashboard.
+Push MFA, hardware security keys, and biometric authentication; TOTP is the first-release second factor.
+Full HR, payroll, accounting, ERP, document-management, or messaging functions.
+Multi-tenant SaaS, complex SSO/federation, and enterprise directory synchronization.
+Guaranteed immutable cloud backup service; actual offsite immutability depends on infrastructure. The project will demonstrate available backup controls and document the 3-2-1 design.
+Automated phishing campaigns or a complete learning-management system; awareness content and acknowledgement evidence are sufficient for the initial academic scope.
+Claims of legal compliance certification, formal penetration-test certification, or 24/7 incident response.
+4.3 Release strategy
+Release
+Target contents
+MVP / Release 1
+Authentication, TOTP MFA, users, RBAC, privileged approval, audit trail, core alerts, baseline application security, backup/restore demonstration.
+Release 1.1 if time permits
+Incident management, risk register, policy acknowledgement, access review workflow, richer dashboard and automated backup scheduling.
+Future
+External SIEM, enterprise identity provider, hardware keys, push MFA, managed immutable offsite backups, multi-tenant support.
+This staged plan is a delivery strategy, not permission to ignore the lecturer's coverage. Controls not automated in the application must be addressed through documented procedures and evidence in the final submission.
+5. Functional Requirements
+Unless stated otherwise, functional requirements shall be enforced by the server. The Must requirements define the first-release baseline.
+5.1 Registration and account lifecycle
+FR-REG-01 [Must] The system shall allow an authorized administrator to invite/create an account using only required identity fields: full name, email or mobile number, and organizational unit when applicable.
+Acceptance: A new account remains Pending Verification or Invitation Pending and cannot access protected features.
+FR-REG-02 [Must] The system shall verify email or mobile ownership before activating self-registered accounts.
+Acceptance: A valid, unexpired, single-use challenge activates the account; expired, invalid, and reused challenges are rejected.
+FR-REG-03 [Should] The system shall apply CAPTCHA or an equivalent anti-automation control to public self-registration when enabled.
+Acceptance: Failed CAPTCHA validation blocks registration; provider secrets remain server-side.
+FR-REG-04 [Must] The system shall support Pending Verification, Active, Suspended, Locked, and Deactivated account states.
+Acceptance: Only Active accounts that pass authentication and authorization can access protected functions.
+FR-REG-05 [Must] Users shall view/update permitted profile fields; security-relevant profile changes shall be audited.
+Acceptance: A user cannot modify another user's profile without explicit permission.
+FR-REG-06 [Must] Authorized administrators shall invite, suspend, reactivate, and deactivate accounts with a reason for administrative changes.
+Acceptance: Each transition records actor, target, timestamp, reason, and outcome.
+FR-REG-07 [Must] The system shall provide account recovery with identity verification before password reset.
+Acceptance: Reset tokens are single-use, expire, are rate-limited, and do not disclose account existence.
+5.2 Password authentication and sessions
+FR-AUTH-01 [Must] Users shall authenticate using registered email/username and password.
+Acceptance: Valid credentials for an MFA-protected account proceed to MFA, not directly to a full session.
+FR-AUTH-02 [Must] The system shall enforce a minimum password length of 12 characters and reject common/compromised passwords where a suitable list or service is available.
+Acceptance: Short or disallowed passwords are rejected server-side.
+FR-AUTH-03 [Must] Passwords shall be stored only as salted, computationally expensive hashes using Argon2id or a documented secure alternative.
+Acceptance: Database inspection finds no plaintext or reversibly encrypted passwords.
+FR-AUTH-04 [Must] The system shall temporarily lock an account after five consecutive failed password attempts within a configurable observation window.
+Acceptance: Further attempts are rejected during lockout; duration and unlock procedure are configurable and audited.
+FR-AUTH-05 [Must] Login, registration, verification, MFA, and password-reset endpoints shall be rate-limited.
+Acceptance: Excessive requests are throttled and relevant events recorded.
+FR-AUTH-06 [Must] Passwords, reset tokens, MFA codes/secrets, and session credentials shall never appear in URLs or application logs.
+Acceptance: Log review confirms that secrets are absent.
+FR-AUTH-07 [Must] A full authenticated session shall be established only after all required authentication factors succeed.
+Acceptance: Password-only login cannot access protected endpoints when MFA is required.
+FR-AUTH-08 [Must] Browser session/refresh credentials shall use Secure, HttpOnly, SameSite cookies over HTTPS; sensitive tokens shall not be stored in localStorage.
+Acceptance: Cookie flags are verified and no sensitive token is persisted in localStorage.
+FR-AUTH-09 [Must] Access credentials shall have short lifetimes and refresh/session credentials shall rotate after renewal.
+Acceptance: A previously rotated credential is rejected.
+FR-AUTH-10 [Must] The system shall support secure logout and server-side credential/session revocation.
+Acceptance: A credential used after logout is rejected.
+FR-AUTH-11 [Must] The system shall enforce absolute session lifetime and idle timeout.
+Acceptance: Expired or idle sessions require re-authentication.
+FR-AUTH-12 [Must] Cookie-authenticated state-changing requests shall be protected against CSRF; session identifiers shall be renewed after authentication.
+Acceptance: Invalid CSRF requests are rejected and session ID changes after login.
+FR-AUTH-13 [Must] Production/staging traffic, especially authentication traffic, shall use HTTPS/TLS.
+Acceptance: HTTP is redirected or rejected in deployment; secure cookies are enabled.
+5.3 Multi-factor authentication
+FR-MFA-01 [Must] The system shall support TOTP as the additional authentication factor after password verification.
+Acceptance: A valid TOTP is required before establishing a full session.
+FR-MFA-02 [Must] The system shall provide MFA enrollment using a QR code/secret and require a valid TOTP to confirm enrollment.
+Acceptance: MFA is not enabled until a valid code is verified; TOTP secret is encrypted and never logged.
+FR-MFA-03 [Must] The system shall generate one-time recovery codes and store only protected representations of them.
+Acceptance: Each recovery code works once and is invalidated after use.
+FR-MFA-04 [Must] MFA reset/recovery shall require identity verification and shall be audited.
+Acceptance: Unauthenticated requests cannot disable MFA; reset generates an audit event and alert.
+FR-MFA-05 [Should] The system should support mandatory MFA policy for privileged roles.
+Acceptance: Privileged accounts cannot access protected features without MFA when policy is enabled.
+5.4 User, role, and permission management
+FR-IAM-01 [Must] Authorized administrators shall list, search, view, invite/create, update, suspend, reactivate, and deactivate users.
+Acceptance: Each operation is permission-checked and logged.
+FR-IAM-02 [Must] The system shall implement Organization Administrator, Security Officer, Department Manager, and Employee roles.
+Acceptance: Baseline roles exist in controlled seed data or administration.
+FR-IAM-03 [Must] The system shall map roles to granular permissions and deny access by default.
+Acceptance: A caller without permission receives an authorization denial; client-side manipulation cannot bypass it.
+FR-IAM-04 [Must] Authorized administrators shall assign, modify, and revoke standard roles subject to policy constraints.
+Acceptance: Role history records actor, target, old/new role, timestamp, reason, and outcome.
+FR-IAM-05 [Must] Users shall not grant themselves privileges through API payload manipulation or client-side changes.
+Acceptance: Tampering with identifiers or role fields does not increase privileges.
+FR-IAM-06 [Should] Manager access should be scoped to the manager's assigned organizational unit.
+Acceptance: A manager cannot access users outside their unit unless separately authorized.
+FR-IAM-07 [Must] The system shall provide periodic access review to inspect role assignments and record retain/change/revoke decisions.
+Acceptance: Review records identify reviewer, date, scope, decision, and follow-up.
+5.5 Privileged role-change workflow
+FR-RBAC-01 [Must] An eligible user/manager shall submit a role-change request with target user, requested role, business justification, and optional expiry.
+Acceptance: Request is created with unique ID and Pending state.
+FR-RBAC-02 [Must] Privileged requests shall be routed to an authorized independent approver.
+Acceptance: Only a user with role.approve permission and no requester conflict can approve.
+FR-RBAC-03 [Must] The requester shall not approve their own privileged-role request; this shall be enforced by the server.
+Acceptance: Self-approval attempts through UI or direct API are rejected and audited.
+FR-RBAC-04 [Must] Approvers shall approve/reject with identity, timestamp, decision, and comments.
+Acceptance: Approval applies the change; rejection does not.
+FR-RBAC-05 [Must] A privileged role shall not become effective before the required approval is recorded.
+Acceptance: Pending requests do not change effective permissions.
+FR-RBAC-06 [Must] Temporary privileged roles shall support expiry and revocation.
+Acceptance: Expired/revoked privileges cease authorizing actions and create audit events.
+FR-RBAC-07 [Should] The system should notify requester and target of request outcomes using in-app notifications or configured email.
+Acceptance: Notification contains decision status without exposing internal sensitive details.
+5.6 Audit trails and logging
+FR-AUD-01 [Must] The system shall log authentication success/failure, authorization denials, role changes, privileged approvals, sensitive-resource access, administrative actions, and backup/restore operations.
+Acceptance: Each supported event persists as an audit record.
+FR-AUD-02 [Must] Audit records shall include event ID, timestamp, actor/system identity, action, target/resource, outcome, source IP when available, and safe metadata.
+Acceptance: Required fields exist; secrets are never logged.
+FR-AUD-03 [Must] The system shall record observable critical system events including startup/shutdown, configuration changes, service failures, and security alerts.
+Acceptance: Controlled system events appear in system logs.
+FR-AUD-04 [Must] Ordinary application users shall not modify or delete audit records.
+Acceptance: No ordinary user-facing API permits audit record alteration.
+FR-AUD-05 [Must] Audit storage shall be tamper-evident using a cryptographic hash chain or equivalent.
+Acceptance: Verification detects a deliberately modified test record.
+FR-AUD-06 [Must] Sensitive audit data shall be encrypted at rest where supported and log access restricted to authorized personnel.
+Acceptance: Unauthorized roles cannot query logs; deployment encryption is enabled or documented as infrastructure-dependent.
+FR-AUD-07 [Must] Authorized users shall search/filter audit records by date, actor, event type, target, and outcome.
+Acceptance: Search results respect the caller's permissions.
+FR-AUD-08 [Should] The system should define configurable log retention and audit archival/deletion operations.
+Acceptance: Retention actions are controlled and logged.
+5.7 Monitoring and alerting
+FR-MON-01 [Must] The system shall alert when an account reaches the failed-login threshold or is locked.
+Acceptance: A test sequence creates an alert visible to a security officer.
+FR-MON-02 [Must] The system shall alert on privileged-role approval/assignment/revocation, MFA reset, and selected configuration changes.
+Acceptance: Alert includes event time, affected account/resource, severity, and status.
+FR-MON-03 [Must] The security dashboard shall show recent alerts, event counts, failed logins, role changes, and unresolved incidents.
+Acceptance: Dashboard values correspond to persisted events for the selected period.
+FR-MON-04 [Should] Authorized security personnel should acknowledge, assign, investigate, resolve, or dismiss alerts with a recorded reason.
+Acceptance: Each status transition is audited.
+FR-MON-05 [Must] The system shall provide in-app alerts; email delivery may be enabled when provider credentials are configured.
+Acceptance: In-app alerts work without paid services; email is tested only when configured.
+5.8 Backup and recovery
+FR-BKP-01 [Must] An authorized administrator shall view backup schedule, last run, status, backup type, and restore points where available.
+Acceptance: Latest backup status and history are visible.
+FR-BKP-02 [Must] The academic demonstration shall define an initial RPO of 24 hours and RTO of 4 hours.
+Acceptance: These targets and test evidence are documented; supervisor may approve different targets.
+FR-BKP-03 [Must] The project shall support/document scheduled full backups and incremental recovery using PostgreSQL WAL archiving where configured.
+Acceptance: A full backup is demonstrated and an incremental/WAL strategy documented; limitations are stated.
+FR-BKP-04 [Must] Only explicitly authorized administrators shall create, download, restore, or delete backups.
+Acceptance: Unauthorized operations are rejected and privileged operations audited.
+FR-BKP-05 [Must] Backup/restore attempts shall record actor, time, result, and safe failure reason.
+Acceptance: Both successful and failed test operations appear in history.
+FR-BKP-06 [Must] The project shall restore a backup into a separate test environment and verify selected application data.
+Acceptance: Restore checklist and evidence show recovered records.
+FR-BKP-07 [Must] Backups shall be encrypted at rest and in transit; the deployment plan shall address 3-2-1 storage and at least one immutable/offsite copy.
+Acceptance: Report distinguishes protections actually enabled from infrastructure-dependent design.
+FR-BKP-08 [Must] Backup artifacts shall be outside public web paths and a secure disposal procedure shall be documented.
+Acceptance: No backup artifact is publicly served; disposal is documented.
+5.9 Application and data security
+FR-APP-01 [Must] All request input shall be validated server-side using explicit schemas; invalid, unexpected, or oversized input shall be rejected.
+Acceptance: Invalid types, missing fields, unexpected fields, and oversized payloads fail safely.
+FR-APP-02 [Must] Database access shall use parameterized queries/Prisma safe query mechanisms; untrusted input shall not be concatenated into SQL.
+Acceptance: Code review and injection tests show input is treated as data.
+FR-APP-03 [Must] Untrusted output shall be safely encoded; intentionally supported rich text shall be sanitized.
+Acceptance: Stored/reflected XSS payloads are inert or rejected.
+FR-APP-04 [Must when uploads enabled] If uploads are enabled, the system shall allowlist extension, MIME type, signature, and size, and store files outside executable/public paths.
+Acceptance: Disallowed and oversized files are rejected.
+FR-APP-05 [Must] Users shall receive generic errors; detailed diagnostics shall be logged internally without exposing stack traces, SQL errors, paths, or secrets.
+Acceptance: Production error responses are generic.
+FR-APP-06 [Must] Deployment shall configure HSTS, CSP, X-Content-Type-Options, frame protection, and Referrer-Policy.
+Acceptance: Header inspection confirms expected headers.
+FR-APP-07 [Must] Data shall be classified Public, Internal, Confidential, or Restricted with handling rules.
+Acceptance: Data dictionary identifies classification and API/UI respect it.
+FR-APP-08 [Must] Retention and secure deletion rules shall be defined for accounts, logs, incidents, and backups.
+Acceptance: Rules are documented and deletion/deactivation behavior tested.
+FR-APP-09 [Must] Every protected API request shall authenticate the caller and authorize the requested action.
+Acceptance: Direct API calls without valid session/permission are rejected.
+FR-APP-10 [Must] The API shall enforce request-size limits, bounded pagination, and rate limits for sensitive/resource-intensive endpoints.
+Acceptance: Oversized/excessive requests are rejected or throttled.
+FR-APP-11 [Could] mTLS shall be considered for service-to-service communication; it is not required for a single-server MVP unless separate services are introduced.
+Acceptance: Architecture documents whether mTLS applies.
+5.10 Incident response and governance
+FR-GOV-01 [Must] Users shall submit incident reports with category, description, observed time, and optional evidence reference.
+Acceptance: A tracking ID is returned and submission audited.
+FR-GOV-02 [Must] Authorized security personnel shall classify, assign, prioritize, update, contain, resolve, and close incidents.
+Acceptance: Each status/assignment change is attributable and timestamped.
+FR-GOV-03 [Must] Incident records shall capture detection, containment, eradication, recovery, and post-incident review actions.
+Acceptance: Each stage can be recorded or marked not applicable with reason.
+FR-GOV-04 [Should] The system should provide a risk register with description, likelihood, impact, owner, treatment, status, and review date.
+Acceptance: Security officer can create/update risks and mitigation status.
+FR-GOV-05 [Should] The system should maintain policy/awareness materials and user acknowledgement records.
+Acceptance: Policy version and acknowledgement user/time are retained.
+FR-GOV-06 [Must] The project shall document incident responsibilities/escalation, acceptable use, change management, awareness, and periodic review procedures.
+Acceptance: Final documentation includes procedures and ownership/review frequency.
+5.11 Reporting and administration
+FR-REP-01 [Should] The system should provide permission-filtered reports for users/roles, access reviews, role changes, audit events, alerts, incidents, risks, and backups.
+Acceptance: Reports respect role permissions.
+FR-REP-02 [Must] Security-relevant configuration changes shall record actor, timestamp, reason, and safe before/after values.
+Acceptance: A test configuration change creates an audit event.
+FR-REP-03 [Could] The system may provide a health/status view for observable application services and scheduled tasks.
+Acceptance: Status view clearly labels checks that are unavailable.
+6. External Interface Requirements
+6.1 User interface
+Provide a responsive browser interface optimized for desktop administration and usable at tablet/mobile widths.
+Provide role-appropriate navigation; hidden buttons are usability aids, not security enforcement.
+Forms shall have labels, validation messages, required-field indicators, and confirmation for destructive actions.
+Dashboards shall distinguish informational, warning, and critical alerts without relying on color alone.
+Mask sensitive values; MFA secrets/recovery codes must not remain visible after setup.
+6.2 Software interfaces
+Interface
+Requirement
+Browser ↔ API
+HTTPS REST/JSON; secure cookie/session; CSRF protection for state-changing cookie-authenticated requests.
+API ↔ PostgreSQL
+Prisma; least-privileged database account; encrypted connection in deployed environments where supported.
+Email/SMS
+Optional provider adapter; credentials in environment/secret manager; development verification mode clearly separated.
+Authenticator
+Standards-compatible TOTP authenticator.
+Backup tools
+PostgreSQL backup/restore utilities and optional WAL archiving; files outside public web paths.
+Monitoring
+Internal event store and dashboard; external SIEM is future scope.
+6.3 API conventions
+Use consistent JSON response envelopes and appropriate HTTP status codes.
+Authenticate and authorize each protected endpoint.
+Validate path, query, header, and body inputs.
+Use bounded pagination on list endpoints.
+Never return password hashes, MFA secrets, recovery hashes, session credentials, stack traces, or unnecessary personal data.
+Version the API (for example /api/v1) and document permissions required for endpoints.
+7. Data Requirements
+7.1 Core entities
+Entity
+Conceptual attributes
+Purpose
+User
+id, name, email/phone, status, unitId, timestamps
+Identity and account lifecycle.
+Role
+id, name, description, privilegedFlag
+Organizational role.
+Permission
+id, key, description
+Atomic action permission.
+RolePermission
+roleId, permissionId
+Role-to-permission mapping.
+UserRole
+userId, roleId, assignedBy, assignedAt, expiresAt, revokedAt
+Effective assignment and history.
+RoleChangeRequest
+requesterId, targetUserId, roleId, justification, status, approverId, decisionAt, expiry
+Approval workflow.
+Session
+userId, credentialHash, issuedAt, expiresAt, rotatedFrom, revokedAt
+Session lifecycle.
+MFAFactor
+userId, encryptedSecret, enabledAt, resetAt
+TOTP state.
+RecoveryCode
+userId, codeHash, usedAt
+One-time recovery.
+AuditEvent
+id, actor, action, target, time, IP, outcome, metadata, previousHash, eventHash
+Tamper-evident activity.
+SecurityAlert
+type, severity, sourceEvent, status, assignee, timestamps
+Monitoring response.
+BackupRecord
+type, reference, start/end, status, checksum
+Backup/restore evidence.
+Incident
+reporter, category, description, severity, status, assignee, lifecycle
+Incident tracking.
+Risk
+description, likelihood, impact, owner, treatment, status, reviewDate
+Risk register.
+Policy/Acknowledgement
+policy title/version; userId, acknowledgedAt
+Governance evidence.
+7.2 Data classification
+Level
+Examples
+Handling
+Public
+Published help or public policy summary
+Unauthenticated access only when explicitly designated.
+Internal
+Organization structure, ordinary configuration
+Authenticated and role-limited access.
+Confidential
+Contact details, incident narratives, audit metadata
+Least privilege; protect in transit/at rest; mask in test data.
+Restricted
+Password hashes, MFA secrets, recovery/session hashes, backup keys
+Never display; strong cryptographic protection; tightly restricted; never log.
+7.3 Integrity and lifecycle
+Use UUID or equivalent non-guessable public identifiers.
+Use database constraints for required fields, uniqueness, references, and valid state values.
+Store timestamps consistently in UTC and display in configured/local timezone.
+Preserve role-change and audit history; do not overwrite historical events.
+Use synthetic or masked data in development and testing.
+Define retention periods before production use; deletion and archival must be controlled and audited.
+7.4 Proposed academic retention defaults
+These are project defaults, not legal advice. Confirm applicable retention obligations with the supervisor before production use.
+Category
+Proposed retention
+Notes
+Audit events
+180 days
+Controlled, audited archive/purge process.
+Security alerts
+180 days after resolution
+Retain source event reference.
+Incident records
+12 months after closure
+Anonymize/remove personal details when appropriate.
+Inactive accounts
+Deactivate promptly; review after 90 days
+Preserve necessary audit history.
+Backups
+30-day rolling set; protected monthly copy if possible
+Document actual storage and disposal.
+8. Non-Functional Requirements
+8.1 Security
+NFR-SEC-01 [Must] Production/staging traffic shall use TLS 1.2 or later, preferably TLS 1.3.
+NFR-SEC-02 [Must] Secrets and credentials shall be provided through environment configuration or secret management and never committed to version control.
+NFR-SEC-03 [Must] The deployment shall configure HSTS, CSP, X-Content-Type-Options, frame protection, and Referrer-Policy.
+NFR-SEC-04 [Must] Application and database service accounts shall use least privilege.
+NFR-SEC-05 [Must] Security-sensitive operations shall be permission-checked and audited.
+NFR-SEC-06 [Must] Sensitive data shall be encrypted at rest where appropriate; passwords/recovery codes are one-way hashed and TOTP secrets use authenticated encryption.
+NFR-SEC-07 [Must] Detailed errors, internal paths, stack traces, and secrets shall not be exposed to end users.
+NFR-SEC-08 [Must] Security controls shall fail closed when authentication, authorization, or required MFA cannot be verified.
+8.2 Performance and capacity
+NFR-PERF-01 [Should] For the academic demonstration environment, 95% of ordinary API requests should complete within 2 seconds, excluding external delivery and backup/restore operations.
+NFR-PERF-02 [Must] List screens shall use server-side pagination and filtering rather than unbounded data retrieval.
+NFR-PERF-03 [Should] The system should support 50 demonstration accounts and 10 concurrent test sessions without functional failure.
+8.3 Reliability
+NFR-REL-01 [Must] The application shall display a controlled unavailable/maintenance state when API or database services cannot be reached.
+NFR-REL-02 [Must] Notification-provider failure shall not silently reverse a completed security decision; delivery failure shall be recorded.
+NFR-REL-03 [Must] Database migrations shall be version-controlled and repeatable; destructive schema changes require review and backup.
+8.4 Usability and accessibility
+NFR-USE-01 [Should] Navigation, labels, validation, status indicators, and confirmation patterns shall be consistent.
+NFR-USE-02 [Should] Core workflows should support keyboard navigation, visible focus, and programmatic form labels.
+NFR-USE-03 [Should] The system should explain unavailable actions without revealing sensitive authorization internals.
+8.5 Maintainability and portability
+NFR-MNT-01 [Must] Code shall separate presentation, routes/controllers, business logic, data access, validation, and security middleware.
+NFR-MNT-02 [Must] The repository shall include setup instructions, safe environment examples, migrations/seeds, and test commands.
+NFR-MNT-03 [Must] Dependencies shall be maintained and vulnerability-scanned before final submission.
+NFR-MNT-04 [Must] Core features shall run locally without mandatory paid services.
+8.6 Logging and observability
+NFR-OBS-01 [Must] Logs shall be structured, timestamped, and correlated with request/event identifiers where applicable.
+NFR-OBS-02 [Must] Audit access and integrity-verification operations shall themselves be audited.
+NFR-OBS-03 [Must] Monitoring shall distinguish observed events from heuristic alerts and shall not claim complete attack detection.
+9. Use Cases and Key Workflows
+9.1 UC-01: Sign in with MFA
+Field
+Description
+Actors
+Employee, Manager, Security Officer, Organization Administrator
+Preconditions
+Account is Active; MFA is enabled or required.
+Main flow
+1. User submits username/email and password. 2. Server checks account state, password, lockout, and rate limit. 3. Server requests TOTP. 4. User submits code. 5. Server verifies code and issues secure session cookie. 6. Authentication is audited.
+Alternatives
+Invalid password: generic failure and event. Locked account: deny and alert. Invalid TOTP: deny and record. Expired session: require sign-in.
+Postcondition
+Full authenticated session exists only after required factors pass.
+9.2 UC-02: Request and approve privileged role
+Field
+Description
+Actors
+Requester; independent Security Officer approver
+Preconditions
+Requester is authenticated; target exists; role requires approval.
+Main flow
+1. Requester selects target and role. 2. Enters business justification and optional expiry. 3. Server validates permission and creates Pending request. 4. Eligible approver reviews. 5. Server confirms approver is not requester and has approval permission. 6. Approver approves/rejects with comment. 7. Approval applies role. 8. Parties are notified. 9. Request, change, and alert are recorded.
+Alternatives
+Self-approval: reject. Insufficient permission: reject. Rejected request: no role change. Expired request: close without applying role.
+Postcondition
+Only independently approved requests change effective privileges.
+9.3 UC-03: Investigate alert
+Field
+Description
+Actor
+Security Officer
+Preconditions
+Officer has audit.read and alert.manage.
+Main flow
+1. Open dashboard. 2. Review event/alert summaries. 3. Filter by date, actor, type, target, outcome. 4. Open alert and linked events. 5. Acknowledge, assign, investigate, or resolve with notes. 6. Actions are audited.
+Alternatives
+Unauthorized user is denied; no matches show empty state; integrity failure raises high-severity alert.
+Postcondition
+Investigation status and actions are recorded.
+9.4 UC-04: Backup and restore
+Field
+Description
+Actor
+Organization Administrator
+Preconditions
+Administrator has backup.manage; storage is configured.
+Main flow
+1. View backup status. 2. Start/confirm backup. 3. PostgreSQL tooling creates encrypted artifact outside public web path. 4. System records status/time/reference. 5. Administrator verifies metadata. 6. Operation is audited. Restore is tested separately in an isolated environment.
+Alternatives
+Failure records status/reason and alert; unavailable storage stops operation safely.
+Postcondition
+Backup evidence is available and restore evidence is recorded after a separate test.
+9.5 UC-05: Report and manage incident
+Field
+Description
+Actors
+Employee reporter; Security Officer handler
+Preconditions
+Reporter has active account; handler has incident.manage.
+Main flow
+1. Reporter submits category, description, time and optional evidence reference. 2. System creates tracking ID. 3. Officer classifies/assigns. 4. Officer records containment, eradication, recovery, and post-incident review. 5. Officer closes with summary.
+Alternatives
+Invalid fields are rejected; unauthorized users cannot view confidential incident details.
+Postcondition
+Incident history and status are retained.
+9.6 State models
+Object
+States
+Account
+Pending Verification → Active → Suspended/Locked → Active; Active → Deactivated.
+Role request
+Pending → Approved / Rejected / Cancelled / Expired; only Approved applies a role.
+Alert
+New → Acknowledged → Assigned → Investigating → Resolved/Dismissed.
+Incident
+Reported → Triaged → Assigned → Containment → Eradication → Recovery → Review → Closed; N/A stages require reason.
+Backup
+Queued → Running → Succeeded/Failed/Cancelled; restore is a separate operation.
+10. Acceptance and Verification
+Acceptance requires evidence at the API and UI levels. Screenshots alone do not prove security. The following minimum tests define the first-release baseline.
+Test ID
+Area
+Expected result
+AT-01
+Registration
+Unverified account cannot use protected features; valid verification activates it.
+AT-02
+Password policy
+Short and disallowed passwords are rejected.
+AT-03
+Password storage
+Only salted password hashes are stored.
+AT-04
+Brute-force defense
+Repeated failures trigger lockout, throttling, audit event, and alert.
+AT-05
+MFA
+Password-only access is denied when MFA required; valid TOTP completes login.
+AT-06
+Session
+Cookie flags correct; logout/revocation and idle/absolute expiry enforced.
+AT-07
+RBAC
+Employee cannot call admin/security endpoint directly.
+AT-08
+Separation of duties
+Requester cannot approve own privileged-role request through UI or API.
+AT-09
+Approval
+Pending/rejected request does not change permissions; approved request does.
+AT-10
+Audit
+Authentication, role changes, sensitive actions and backup/restore create audit events.
+AT-11
+Integrity
+Changing a test audit record causes hash verification failure.
+AT-12
+Alerts
+Failed-login threshold and privileged change generate visible alerts.
+AT-13
+Validation
+Invalid IDs, unexpected fields, malformed values, and oversized payloads are rejected.
+AT-14
+Injection/XSS
+SQL injection and XSS payloads do not alter data or execute.
+AT-15
+Errors
+Production responses expose no stack traces, SQL errors, paths, or secrets.
+AT-16
+Headers
+Required security headers are present.
+AT-17
+Backup
+Full backup is generated outside public paths, protected, and audited.
+AT-18
+Restore
+Backup restores into separate test DB and selected data is verified.
+AT-19
+Incident
+User reports incident; officer advances it through response stages.
+AT-20
+Governance
+Risk/policy evidence is recorded if included in release.
+AT-21
+Access review
+Reviewer records retain/change/revoke decisions.
+AT-22
+Security checks
+Dependency scan and static checks run; critical findings addressed or documented.
+10.1 Verification methods
+Inspection: review requirements, architecture, code, and configuration.
+Demonstration: execute workflows through the browser.
+API testing: directly test endpoints to prove server-side enforcement.
+Automated testing: unit, integration, and end-to-end tests.
+Security testing: SAST, DAST where available, dependency scanning, and controlled manual tests.
+Recovery testing: restore into an isolated database and verify data.
+10.2 Definition of done
+A feature is complete only when its requirement is implemented; server-side validation and authorization exist; success and failure paths are tested; security-relevant actions are audited; errors are safe; documentation is updated; and evidence is captured for the final demonstration.
+11. Assumptions, Dependencies, Risks and Constraints
+11.1 Assumptions
+Release 1 serves one organization and one deployment.
+PostgreSQL and the application can run locally during development.
+A TOTP authenticator app is available for testing.
+Email/SMS/CAPTCHA credentials may be unavailable; core demonstration must remain possible with a clearly labeled development-only mode.
+Synthetic demonstration data will be used.
+The lecturer may clarify expected depth of individual controls.
+11.2 Dependencies
+Node.js, npm, PostgreSQL, supported browser.
+Prisma migrations and seed data for baseline roles/permissions.
+TOTP and cryptographic libraries appropriate to the implementation.
+Optional SMTP/SMS/CAPTCHA credentials.
+PostgreSQL backup utilities and storage for restore testing.
+11.3 Risks and mitigations
+Risk
+Impact
+Mitigation
+Scope too large
+Incomplete security controls.
+Prioritize identity, MFA, RBAC, approval, audit, alerts, backup/restore; defer optional integrations.
+No external delivery credentials
+Verification/notifications blocked.
+Use provider adapters and development-only test mode; document production setup.
+Authorization design flaw
+Privilege escalation/data exposure.
+Central permission middleware, deny-by-default, negative API tests.
+Audit alteration
+Loss of trustworthy evidence.
+Hash chain, restricted access, integrity tests; external immutable storage as future hardening.
+Backup not restorable
+Data loss despite backup file.
+Restore drills in isolated environment with recorded evidence.
+Time constraint
+Governance/operational features shallow.
+Stage delivery; document procedures and identify what is not automated.
+Secrets committed to Git
+Credential compromise.
+Environment examples only, secret scanning, rotation and .gitignore.
+11.4 Constraints
+The lecturer's assignment states a submission deadline of December 7, 2026.
+The project is individual and the application name is SecureOrg – Secure Organizational Management System.
+Core functionality should not require paid subscriptions.
+The final report must not claim compliance certification or resilience beyond implemented and tested controls.
+12. Traceability to Lecturer's Project Specification
+The lecturer's Project One document is the source for the security domains below. The SRS converts them into product requirements and evidence.
+Lecturer area
+SRS coverage
+Evidence to demonstrate
+1.1 RBAC
+FR-IAM-02–07; FR-RBAC-01–07
+Role/permission matrix; API authorization; independent approval; access review.
+1.2 Registration
+FR-REG-01–07
+Registration/verification/recovery; CAPTCHA or documented limitation.
+1.3 Password
+FR-AUTH-01–07
+Password policy, hashing, lockout, rate limiting, HTTPS.
+1.4 Token/session
+FR-AUTH-08–13
+Cookie flags, rotation, revocation, idle timeout, CSRF, session renewal.
+1.5 MFA
+FR-MFA-01–05
+TOTP enrollment/login, one-time recovery, controlled reset.
+2.1–2.3 Logging/integrity
+FR-AUD-01–08
+Audit records, restricted access, hash verification, retention.
+2.4–2.5 Monitoring
+FR-MON-01–05
+Dashboard, failed-login and privileged-change alerts, acknowledgement.
+3 Backups
+FR-BKP-01–08; RPO/RTO
+Backup, encryption, restore evidence, 3-2-1/immutable design.
+4.1–4.5 App/data/API security
+FR-APP-01–11; NFR-SEC-01–08
+Validation, injection/XSS tests, safe errors, headers, classification, API security.
+5.1 Secure coding
+NFR-MNT-01–04; Section 10
+Layered code, review checklist, no hardcoded secrets.
+5.2 Security testing
+AT-13–16, AT-22
+SAST/DAST/dependency scan; penetration test only if actually performed.
+5.3 Secure deployment
+NFR-REL-03; deployment docs
+Version control, migrations, staging, rollback, verified backups.
+6.1 Incident response
+FR-GOV-01–03
+Incident workflow and detection-to-review procedure.
+6.2 Continuity/DR
+FR-BKP-02–08; NFR-REL-01
+RPO/RTO, restore evidence, recovery procedure.
+6.3 Awareness
+FR-GOV-05–06
+Awareness content, acknowledgement, training procedure.
+8 Governance
+FR-GOV-04–06; NFR-OBS-02
+Applicable-law review, policy, risk register, audits, change management.
+The lecturer's source labels the final section “8. Compliance and Governance” after section 6. This SRS preserves that source numbering in the traceability table.
+12.1 Requirements not delivered by software alone
+Peer code review, formal penetration testing, legal applicability decisions, staff awareness training, immutable offsite backup operations, physical media destruction, contact-list maintenance, and disaster-recovery exercises are organizational or infrastructure practices. SecureOrg may record evidence or provide workflows, but software alone cannot guarantee that these practices occur. The final report must distinguish implemented functions from documented procedures and infrastructure-dependent controls.
+13. Glossary and References
+Term
+Meaning
+Access control
+Rules defining which authenticated identity may perform an action on a resource.
+Audit trail
+Chronological record of security-relevant actions and outcomes.
+CSRF
+Cross-Site Request Forgery.
+DAST
+Dynamic Application Security Testing of a running application.
+MFA
+Multi-Factor Authentication using two or more factor types.
+RPO
+Recovery Point Objective: maximum acceptable data loss measured in time.
+RTO
+Recovery Time Objective: target time to restore a service.
+RBAC
+Role-Based Access Control.
+SAST
+Static Application Security Testing of source/binary code.
+SIEM
+Security Information and Event Management platform.
+TOTP
+Time-based One-Time Password.
+XSS
+Cross-Site Scripting.
+References
+Addis Ababa Science and Technology University, Department of Software Engineering. Computer System Security – Project One, “Security Features Specification,” supplied assignment document, 6 pages; deadline stated as December 7, 2026.
+OWASP Application Security Verification Standard (ASVS), official OWASP project documentation.
+OWASP Top 10, official OWASP project documentation.
+PostgreSQL official documentation: security, backup, restore, and WAL archiving.
+RFC 6238, TOTP: Time-Based One-Time Password Algorithm.
+NIST SP 800-63 series, Digital Identity Guidelines, as supplementary guidance.
+Appendix A. Recommended Build Sequence
+Phase
+Build focus
+Exit condition
+0 Foundation
+Repository, environment, PostgreSQL, Prisma schema, logging, validation, safe errors.
+App runs; migrations and seeds work.
+1 Identity
+Registration/invitation, verification, password policy/hash, login, lockout, sessions, logout, recovery.
+Authentication tests pass.
+2 MFA
+TOTP enrollment/challenge, recovery codes, controlled reset.
+Password-only access blocked when MFA required.
+3 Authorization
+Roles, permissions, middleware, user admin, access review.
+Negative API authorization tests pass.
+4 Privileged workflow
+Request, independent approval, rejection, expiry/revocation, notifications.
+Self-approval impossible and audited.
+5 Audit/monitoring
+Audit schema, hash chain, search, dashboard, alerts.
+Required events captured; integrity and alert tests pass.
+6 Resilience/governance
+Backup/restore, incidents, risks, policies, awareness evidence.
+Restore and governance evidence available.
+7 Hardening/delivery
+Headers, rate limits, SAST/DAST/dependency scan, docs, staging/demo, final tests.
+Acceptance checklist complete; limitations documented.
+Appendix B. Decisions to Freeze Before Coding
+Use TOTP as the required second factor; biometric/push/hardware MFA are future scope.
+Use the four baseline roles in Section 3; add granular permissions rather than many overlapping roles.
+Use a single-organization data model for Release 1.
+Use secure HttpOnly cookies with CSRF protection; do not store sensitive tokens in localStorage.
+Use Argon2id for password hashing where supported.
+Require an independent approver for privileged role requests; requester self-approval is prohibited.
+Implement an internal security event store and rule-based alerts, not a claimed full SIEM integration.
+Demonstrate a real PostgreSQL backup and restore in an isolated environment; state honestly if immutable/offsite storage is not available.
+Use Section 10 acceptance tests as the minimum definition of done.

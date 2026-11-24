@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>SecureOrg – Enterprise Security</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-container":"#d4975f","on-primary":"#ffffff","inverse-surface":"#273143","on-primary-fixed":"#001c3b","tertiary-container":"#593000","background":"#f9f9ff","surface-tint":"#3f5f8d","error":"#ba1a1a","surface-container-highest":"#d9e3fb","on-background":"#111c2d","on-secondary-fixed-variant":"#004883","surface-container":"#e8eeff","surface-container-high":"#dfe8ff","on-secondary-fixed":"#001c39","surface-dim":"#d0daf2","primary-container":"#173b67","primary-fixed-dim":"#a8c8fc","on-tertiary-fixed":"#2d1600","inverse-on-surface":"#ecf0ff","primary-fixed":"#d5e3ff","outline":"#737780","on-primary-container":"#86a6d8","on-error":"#ffffff","on-tertiary-fixed-variant":"#683c0b","secondary-container":"#80b6fe","tertiary-fixed":"#ffdcc0","secondary-fixed-dim":"#a4c9ff","secondary":"#2060a3","on-surface":"#111c2d","surface-bright":"#f9f9ff","tertiary-fixed-dim":"#fab97e","tertiary":"#3a1d00","on-secondary-container":"#004681","outline-variant":"#c3c6d0","inverse-primary":"#a8c8fc","primary":"#00254b","on-surface-variant":"#43474f","surface-container-low":"#f0f3ff","on-secondary":"#ffffff","error-container":"#ffdad6","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#264774","on-tertiary":"#ffffff","surface":"#f9f9ff","secondary-fixed":"#d4e3ff","surface-variant":"#d9e3fb","on-error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1.5rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2rem"},"fontFamily":{"title-lg":["Inter"],"body-sm":["Inter"],"title-md":["Inter"],"label-lg":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-low z-50 flex flex-col justify-between py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-md flex items-center gap-space-sm mb-space-lg"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary">SecureOrg</span><span class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Security</span></div></div><nav class="flex-1 overflow-y-auto px-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Main</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Identity &amp; Access</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="users" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Users</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="organizational-units" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span>Organizational Units</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="roles-and-permissions" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Roles &amp; Permissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="role-change-requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_ind</span><span>Role Change Requests</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="access-reviews" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Access Reviews</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Security Operations</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-alerts" href="#"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span>Security Alerts</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incidents" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidents</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="risk-register" href="#"><span class="material-symbols-outlined text-[20px]">gpp_maybe</span><span>Risk Register</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Resilience</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backup-and-recovery" href="#"><span class="material-symbols-outlined text-[20px]">backup</span><span>Backup &amp; Recovery</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Governance</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-policies" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><span>Security Policies</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">System</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>My Profile</span></a></div></nav><div class="px-space-md pt-space-md"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-on-surface truncate">Marcus Vance</span><span class="inline-flex items-center px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Security Officer</span></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><span class="font-title-md text-title-md text-on-surface">SecureOrg</span></div><div class="flex items-center gap-space-md"><div class="relative hidden md:flex items-center"><span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3">search</span><input class="h-9 w-64 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none" placeholder="Search users, logs, policies..." type="search"/></div><span class="hidden lg:inline-block font-label-md text-label-md text-on-surface-variant">Oct 24, 2024</span><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute -top-1 -right-1 h-4 min-w-[16px] px-1 rounded-full bg-error text-on-error font-label-sm text-label-sm flex items-center justify-center">4</span></button><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="hidden sm:flex items-center gap-space-xs"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="my-profile" href="#">Profile</a><span class="text-on-surface-variant">/</span><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="login" href="#">Logout</a></div></div></div></header><main class="relative pt-16 bg-surface w-full px-8"><div class="flex flex-col w-full pb-16">
+<!-- Top Breadcrumb & Page Meta -->
+<div class="flex flex-col gap-space-xs pt-space-md mb-space-lg">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span>Security Operations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Risk Register</span>
+<span class="mx-space-xs text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        NIST CSF 2.0 / ISO 27005 Synchronized
+      </span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mt-space-xs">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Organizational Risk Register</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          Enterprise cybersecurity risk appetite, quantitative threat scoring, and treatment lifecycle tracking
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Risk Assessment Report</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_moderator</span>
+<span>+ Log New Risk</span>
+</button>
+</div>
+</div>
+</div>
+<!-- KPI Summary Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Total Active -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-surface-container-low rounded-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Total Identified Risks</span>
+<span class="p-1.5 bg-surface-container rounded-lg text-secondary">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">24</span>
+<span class="font-label-md text-label-md text-on-surface-variant">active threats</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+<span>Across 5 business units</span>
+</div>
+</div>
+</div>
+<!-- Critical Exposure -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold">Critical Risk Exposure</span>
+<span class="p-1.5 bg-error-container text-on-error-container rounded-lg">
+<span class="material-symbols-outlined text-[20px]">crisis_alert</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-error font-bold">02</span>
+<span class="font-label-md text-label-md text-on-error-container">unmitigated vectors</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-error font-medium">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span>Immediate mitigation mandatory</span>
+</div>
+</div>
+</div>
+<!-- High Severity Risks -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-on-tertiary-container"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container font-semibold">High Severity Risks</span>
+<span class="p-1.5 bg-tertiary-fixed text-tertiary rounded-lg">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">06</span>
+<span class="font-label-md text-label-md text-on-surface-variant">scored 10 – 14</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">pending_actions</span>
+<span>Treatment plans in progress</span>
+</div>
+</div>
+</div>
+<!-- Residual Risk Index -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Residual Risk Index</span>
+<span class="p-1.5 bg-surface-container-high text-primary rounded-lg">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">18.4</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 100</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Optimal Posture (&lt; 25.0 tolerance)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Section: 5x5 Heatmap Matrix + Appetite Governance Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- 5x5 Risk Matrix Heatmap Visualizer (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-lg text-title-lg text-primary">Dynamic 5×5 Risk Exposure Heatmap</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-on-surface-variant">ISO 31010 Matrix</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Click highlighted threat chips to jump directly into remediation context
+          </p>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-surface-container-high"></span> Low (1-4)
+          </span>
+<span class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed"></span> Med (5-9)
+          </span>
+<span class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span> High (10-14)
+          </span>
+<span class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-error-container"></span> Crit (15-25)
+          </span>
+</div>
+</div>
+<!-- Heatmap Layout -->
+<div class="flex flex-1 pt-space-xs">
+<!-- Y-Axis Label: Likelihood -->
+<div class="flex items-center justify-center pr-space-sm">
+<div class="[writing-mode:vertical-rl] rotate-180 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold text-center">
+            Likelihood →
+          </div>
+</div>
+<!-- Matrix Body -->
+<div class="flex-1 flex flex-col">
+<div class="grid grid-cols-5 gap-1.5 flex-1">
+<!-- Row 5: Likelihood 5 (Almost Certain) -->
+<!-- 5x1 Med -->
+<div class="bg-secondary-fixed/50 hover:bg-secondary-fixed p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">5</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[11px] font-semibold shadow-xs">R-14</span>
+</div>
+</div>
+<!-- 5x2 High -->
+<div class="bg-tertiary-fixed-dim/60 hover:bg-tertiary-fixed-dim p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-tertiary">10</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-tertiary text-[11px] font-semibold shadow-xs">R-08</span>
+</div>
+</div>
+<!-- 5x3 Crit -->
+<div class="bg-error-container/70 hover:bg-error-container p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-error-container">15</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-error text-[11px] font-bold shadow-xs">R-07</span>
+</div>
+</div>
+<!-- 5x4 Crit -->
+<div class="bg-error-container hover:bg-error-container/90 p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-error-container">20</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error text-[11px] font-bold shadow-xs animate-pulse">R-01</span>
+</div>
+</div>
+<!-- 5x5 Crit -->
+<div class="bg-error-container hover:bg-error-container/90 p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-error-container">25</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error text-[11px] font-bold shadow-xs">R-02</span>
+</div>
+</div>
+<!-- Row 4: Likelihood 4 (Likely) -->
+<!-- 4x1 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">4</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-21</span>
+</div>
+</div>
+<!-- 4x2 Med -->
+<div class="bg-secondary-fixed/50 hover:bg-secondary-fixed p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">8</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[11px] font-semibold">R-11</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[11px] font-semibold">R-19</span>
+</div>
+</div>
+<!-- 4x3 High -->
+<div class="bg-tertiary-fixed-dim/60 hover:bg-tertiary-fixed-dim p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-tertiary">12</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-tertiary text-[11px] font-semibold">R-05</span>
+</div>
+</div>
+<!-- 4x4 Crit -->
+<div class="bg-error-container/80 hover:bg-error-container p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-error-container">16</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-error text-[11px] font-bold">R-03</span>
+</div>
+</div>
+<!-- 4x5 Crit -->
+<div class="bg-error-container hover:bg-error-container/90 p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-error-container">20</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-error text-[11px] font-bold">R-04</span>
+</div>
+</div>
+<!-- Row 3: Likelihood 3 (Moderate) -->
+<!-- 3x1 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">3</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-23</span>
+</div>
+</div>
+<!-- 3x2 Med -->
+<div class="bg-secondary-fixed/50 hover:bg-secondary-fixed p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">6</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[11px] font-semibold">R-15</span>
+</div>
+</div>
+<!-- 3x3 Med -->
+<div class="bg-secondary-fixed/60 hover:bg-secondary-fixed p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">9</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[11px] font-semibold">R-09</span>
+</div>
+</div>
+<!-- 3x4 High -->
+<div class="bg-tertiary-fixed-dim/60 hover:bg-tertiary-fixed-dim p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-tertiary">12</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-tertiary text-[11px] font-semibold">R-06</span>
+</div>
+</div>
+<!-- 3x5 Crit -->
+<div class="bg-error-container/70 hover:bg-error-container p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-error-container">15</span>
+<span class="text-[11px] text-on-surface-variant/40">—</span>
+</div>
+<!-- Row 2: Likelihood 2 (Unlikely) -->
+<!-- 2x1 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">2</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-18</span>
+</div>
+</div>
+<!-- 2x2 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">4</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-17</span>
+</div>
+</div>
+<!-- 2x3 Med -->
+<div class="bg-secondary-fixed/50 hover:bg-secondary-fixed p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">6</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[11px] font-semibold">R-13</span>
+</div>
+</div>
+<!-- 2x4 Med -->
+<div class="bg-secondary-fixed/50 hover:bg-secondary-fixed p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">8</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[11px] font-semibold">R-10</span>
+</div>
+</div>
+<!-- 2x5 High -->
+<div class="bg-tertiary-fixed-dim/60 hover:bg-tertiary-fixed-dim p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-tertiary">10</span>
+<span class="text-[11px] text-on-surface-variant/40">—</span>
+</div>
+<!-- Row 1: Likelihood 1 (Rare) -->
+<!-- 1x1 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">1</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-24</span>
+</div>
+</div>
+<!-- 1x2 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">2</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-22</span>
+</div>
+</div>
+<!-- 1x3 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">3</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-20</span>
+</div>
+</div>
+<!-- 1x4 Low -->
+<div class="bg-surface-container-high/60 hover:bg-surface-container-high p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">4</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-12</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant text-[11px]">R-16</span>
+</div>
+</div>
+<!-- 1x5 Med -->
+<div class="bg-secondary-fixed/50 hover:bg-secondary-fixed p-1.5 rounded-lg min-h-[58px] flex flex-col justify-between transition-colors cursor-pointer group">
+<span class="text-[10px] font-bold text-on-surface-variant">5</span>
+<span class="text-[11px] text-on-surface-variant/40">—</span>
+</div>
+</div>
+<!-- X-Axis Labels: Impact -->
+<div class="grid grid-cols-5 gap-1.5 mt-space-xs text-center font-label-sm text-label-sm text-on-surface-variant font-medium">
+<span>1 Insignificant</span>
+<span>2 Minor</span>
+<span>3 Moderate</span>
+<span>4 Major</span>
+<span>5 Catastrophic</span>
+</div>
+<div class="text-center font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold mt-1">
+            Impact (Severity) →
+          </div>
+</div>
+</div>
+</div>
+<!-- Governance & Appetite Breakdown (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-title-lg text-title-lg text-primary">Appetite &amp; Tolerance</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">
+            Board Q3 Approved
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Cyber Risk Capacity vs. Current Aggregated Exposure metrics
+        </p>
+<!-- Circular gauge & breakdown -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Capacity Utilization</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-0.5">73.6%</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Safe Margin (&lt; 85%)</span>
+</div>
+<!-- Inline Gauge SVG -->
+<div class="w-18 h-18 relative flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="73.6, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-sm text-label-sm text-primary font-bold">74%</span>
+</div>
+</div>
+<!-- Strategy Distribution -->
+<div class="mt-space-md space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Active Treatment Strategies</span>
+<div class="space-y-2">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>Mitigate (Remediate internally)</span>
+<span class="font-semibold text-primary">15 risks (62.5%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 62.5%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>Transfer (Cyber Insurance &amp; SLA)</span>
+<span class="font-semibold text-secondary">4 risks (16.6%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 16.6%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>Accept (Documented residual)</span>
+<span class="font-semibold text-on-tertiary-container">3 risks (12.5%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container" style="width: 12.5%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>Avoid (Decommission vector)</span>
+<span class="font-semibold text-error">2 risks (8.4%)</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 8.4%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Chief Risk Officer Sign-off</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last formal attestation: Oct 18, 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail Split: Risk Treatment Registry Table + Focus Mitigation Panel -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Risk Treatment Registry Table (8 cols on XL) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header & Controls -->
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container-lowest">
+<div>
+<span class="font-title-lg text-title-lg text-primary">Risk Treatment Lifecycle Registry</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            5 key tracked risk scenarios with active remediation pipelines
+          </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center gap-1 bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filter: All Categories</span>
+</div>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<th class="py-space-sm px-space-md">Risk ID &amp; Threat Scenario</th>
+<th class="py-space-sm px-space-sm">Category</th>
+<th class="py-space-sm px-space-sm text-center">Inherent</th>
+<th class="py-space-sm px-space-sm">Treatment</th>
+<th class="py-space-sm px-space-sm text-center">Residual</th>
+<th class="py-space-sm px-space-sm">Owner</th>
+<th class="py-space-sm px-space-sm">Review Due</th>
+<th class="py-space-sm px-space-md text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm">
+<!-- Row 1: Selected / Highlighted Critical -->
+<tr class="bg-surface-container-low/70 hover:bg-surface-container cursor-pointer transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-bold text-error">RSK-SEC-0104</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] bg-error-container text-on-error-container font-semibold">Active Focus</span>
+</div>
+<span class="font-title-md text-title-md text-primary font-semibold mt-0.5 group-hover:text-secondary transition-colors">
+                    Insider privilege escalation via unauthorized lateral movement
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary">
+                  Access Control
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-bold px-2 py-1 rounded bg-error-container text-error">
+                  20 • Crit
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Mitigate
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed">
+                  6 • Med
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover shadow-xs" data-alt="Professional headshot of senior security administrator Elena Rostova in corporate navy attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9n0X88c241YLGxiNNe9Ita_KMBD76r44eK8sFVucJlzh6FMYDdksTdrHn8LnUMYnLcZa_OwgqFct4XIPaHm__M3gIYk2_iVhWG4kYTAdb2-WmGjLmj-f0PEP6qrDEaG8Ii8vMWaQhbWMmwhGyfpLOfUqmXN6cXtyEhfDJdjTogO1mBo8bR2PyUmXV94iLb2sCJ_wFYbbzaW_47gHWufVX7zHJIihmHQordfgkH8j"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate max-w-[90px]">E. Rostova</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                Nov 14, 2024
+              </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-medium">
+                  Treatment Active
+                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">RSK-SEC-0101</span>
+<span class="font-body-md text-body-md text-primary font-medium mt-0.5">
+                    Ransomware infection via unpatched developer dependency
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary">
+                  Infrastructure
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-bold px-2 py-1 rounded bg-error-container text-error">
+                  25 • Crit
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Mitigate
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded bg-tertiary-fixed-dim text-tertiary">
+                  10 • High
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover shadow-xs" data-alt="Headshot of DevOps security engineer Carlos Morales wearing clean minimal collared shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvfNGQiR39QzmOnDxv91u7w7WQdTSScaordJ5G0ZX51BDMuJkHczBi5EofcTLlRifGpLFHuixj1QEaYPiqMQApEfbZ0mMMBAU0JqPY7C8ugvKtN-MI3SwdsDvsWDAUb9hKTvIWdCcoXYX04DgEOdV23oMLUrviGHy3lFcb95dxB-sRGip__N8w7eAnauM5n7eOZbfh9chLN2frNT5iKM0P87Z-iVEbaiGqBH11Udde"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate max-w-[90px]">C. Morales</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                Nov 02, 2024
+              </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+                  Under Review
+                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">RSK-SEC-0102</span>
+<span class="font-body-md text-body-md text-primary font-medium mt-0.5">
+                    Multi-cloud IAM credential leakage in public repositories
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary">
+                  Cloud Governance
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-bold px-2 py-1 rounded bg-tertiary-fixed-dim text-tertiary">
+                  16 • Crit
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Transfer
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">
+                  4 • Low
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover shadow-xs" data-alt="Portrait of senior cloud architect Aaliyah Patel in modern tech office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACEI3qUW6r5p158Q06cMB8RVD56nSHHbto9PaFEZ7hsBVUyHJ5hgdnjHbAmH6pVJK9xICY0KPvuM9ODu3HbOr5qy9YrpH7HpxrvNpXyXs8r3WPu_YYJqPQr5L4WNZVBaTH8apCkQo9i7fso2pKqiK2xPZuSc-h1GGsBtwoS-ZKU53Jt82098EnLbGqR2m3GF7C2Jkg0bZ635cJmLHRN5Rrv0NWicagUr0TElxKZeIM"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate max-w-[90px]">A. Patel</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                Dec 01, 2024
+              </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-medium">
+                  Treatment Active
+                </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">RSK-SEC-0103</span>
+<span class="font-body-md text-body-md text-primary font-medium mt-0.5">
+                    Hardware token supply chain tampering
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary">
+                  Supply Chain
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-bold px-2 py-1 rounded bg-tertiary-fixed text-tertiary">
+                  12 • High
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                  Accept
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">
+                  4 • Low
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover shadow-xs" data-alt="Portrait of supply chain security auditor David Zhao with spectacles and professional demeanor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPTbjMK_QLOfHkL5Jm5IuvV092WJrZMR67tHdpdgq6SJ-KcO6438YuBjq4TALLmC_oPQBvLJBINsK0MBk28Rfy3Nqj8DYOk5KWG2tG2a9-_gF5dC_yjcXBdzKXmc0R1Msb1WmyknafODTu0vK_lXZN3P3YcNN49oxfUvvSGhXI1q3o15lRVRYaBji-pXhTFHW90017VnlPkf1KSngzPn-FquSraX_o7CnEvUInh0Vp"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate max-w-[90px]">D. Zhao</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                Jan 15, 2025
+              </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+                  Monitored
+                </span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">RSK-SEC-0105</span>
+<span class="font-body-md text-body-md text-primary font-medium mt-0.5">
+                    Single point of failure in DR offsite vault replication
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary">
+                  Infrastructure
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-bold px-2 py-1 rounded bg-tertiary-fixed text-tertiary">
+                  12 • High
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  Avoid
+                </span>
+</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="inline-flex items-center justify-center font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">
+                  3 • Low
+                </span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover shadow-xs" data-alt="Headshot of IT operations and continuity director Thomas Becker in high-tech server room background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz-7tO-_4oVHhl_FYdxDju_z_K6XFDgqYP79eohtVSOlugIsCr47YPy_uEQc6vBRu1ZLxPys6TlDTJvwUKF0KKvQp5bakpxL_KnrpbIXzD3a3Os9rGcgW-aX756eWK6YOVie5HciByYfJll81Ge0Hp8dEh_xI-CEIHaRSTSNRYKPXqux5Sg6XUUbJG5iNASoxHtzGDftdLUlMUBQDbij4Uh_M9_YyQNkZ8l6G_qo1P"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate max-w-[90px]">T. Becker</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                Dec 10, 2024
+              </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-medium">
+                  Treatment Active
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Navigation -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Showing 1 to 5 of 24 enterprise risks</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-bold text-primary">1</span>
+<button class="p-1 rounded hover:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Risk Treatment & Mitigation Details Panel (4 cols on XL) -->
+<div class="xl:col-span-4 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<!-- Context Header -->
+<div class="flex items-start justify-between pb-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-error uppercase tracking-wider">RSK-SEC-0104</span>
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-bold mt-1">
+              Insider Privilege Escalation via Lateral Movement
+            </h3>
+</div>
+<span class="p-2 rounded-lg bg-error-container text-error">
+<span class="material-symbols-outlined text-[22px]">admin_panel_settings</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Compromised or rogue privileged user accounts exploiting over-permissioned legacy service principals to traverse Active Directory and cloud fabrics.
+        </p>
+<!-- Root Cause Analysis & MITRE Mapping -->
+<div class="mt-space-md p-space-md bg-surface-container-low rounded-lg space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">account_tree</span>
+            Root Cause &amp; MITRE ATT&amp;CK
+          </span>
+<div class="space-y-1 font-body-sm text-body-sm text-on-surface">
+<p class="text-on-surface-variant"><span class="font-semibold text-on-surface">Vector:</span> Misconfigured Kerberos delegation &amp; stale AD schema</p>
+<p class="text-on-surface-variant"><span class="font-semibold text-on-surface">Mapping:</span> T1078 (Valid Accounts), T1068 (Privilege Escalation)</p>
+<p class="text-on-surface-variant"><span class="font-semibold text-on-surface">Target Assets:</span> Tier 0 Core Domain Controllers &amp; AWS Org Root</p>
+</div>
+</div>
+<!-- Treatment Plan -->
+<div class="mt-space-md space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Active Remediation Controls</span>
+<div class="space-y-2">
+<div class="flex items-start gap-2 p-2 rounded-lg bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Automated Dual-Authorization Rollout</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mandatory multi-party sign-off on any IAM policy alteration.</span>
+</div>
+</div>
+<div class="flex items-start gap-2 p-2 rounded-lg bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Strict Just-In-Time (JIT) Elevation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ephemeral credentials with maximum 60-minute automated expiry.</span>
+</div>
+</div>
+<div class="flex items-start gap-2 p-2 rounded-lg bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Micro-segmentation Perimeter</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Zero-trust host isolation blocking RPC lateral connections.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Velocity & Trend -->
+<div class="mt-space-md flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">trending_down</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Risk Velocity: Decreasing (-42%)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Due to SoD Rule 4.1 enforcement</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-secondary bg-surface-container px-2 py-1 rounded">
+            On Track
+          </span>
+</div>
+</div>
+<!-- Board Governance Attestation Stamp -->
+<div class="mt-space-lg pt-space-md bg-surface-container p-space-md rounded-xl">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Audit Attestation</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-snug">
+          Governance Committee verified treatment validity on Oct 22, 2024. Residual risk index (6.0) accepted within Q4 risk tolerance parameters.
+        </p>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-on-surface">
+<span class="text-on-surface-variant">Signed by: <strong class="text-primary font-semibold">Marcus Vance, CISO</strong></span>
+<a class="text-secondary font-semibold hover:underline" href="#">View Signature Log</a>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

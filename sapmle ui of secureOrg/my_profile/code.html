@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>SecureOrg – Enterprise Security</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-container":"#d4975f","on-primary":"#ffffff","inverse-surface":"#273143","on-primary-fixed":"#001c3b","tertiary-container":"#593000","background":"#f9f9ff","surface-tint":"#3f5f8d","error":"#ba1a1a","surface-container-highest":"#d9e3fb","on-background":"#111c2d","on-secondary-fixed-variant":"#004883","surface-container":"#e8eeff","surface-container-high":"#dfe8ff","on-secondary-fixed":"#001c39","surface-dim":"#d0daf2","primary-container":"#173b67","primary-fixed-dim":"#a8c8fc","on-tertiary-fixed":"#2d1600","inverse-on-surface":"#ecf0ff","primary-fixed":"#d5e3ff","outline":"#737780","on-primary-container":"#86a6d8","on-error":"#ffffff","on-tertiary-fixed-variant":"#683c0b","secondary-container":"#80b6fe","tertiary-fixed":"#ffdcc0","secondary-fixed-dim":"#a4c9ff","secondary":"#2060a3","on-surface":"#111c2d","surface-bright":"#f9f9ff","tertiary-fixed-dim":"#fab97e","tertiary":"#3a1d00","on-secondary-container":"#004681","outline-variant":"#c3c6d0","inverse-primary":"#a8c8fc","primary":"#00254b","on-surface-variant":"#43474f","surface-container-low":"#f0f3ff","on-secondary":"#ffffff","error-container":"#ffdad6","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#264774","on-tertiary":"#ffffff","surface":"#f9f9ff","secondary-fixed":"#d4e3ff","surface-variant":"#d9e3fb","on-error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1.5rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2rem"},"fontFamily":{"title-lg":["Inter"],"body-sm":["Inter"],"title-md":["Inter"],"label-lg":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-low z-50 flex flex-col justify-between py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-md flex items-center gap-space-sm mb-space-lg"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary">SecureOrg</span><span class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Security</span></div></div><nav class="flex-1 overflow-y-auto px-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Main</div><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#">Dashboard</a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Identity &amp; Access</div><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="users" href="#">Users</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="organizational-units" href="#">Organizational Units</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#">Roles &amp; Permissions</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="role-change-requests" href="#">Role Change Requests</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="access-reviews" href="#">Access Reviews</a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Security Operations</div><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#">Audit Logs</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-alerts" href="#">Security Alerts</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incidents" href="#">Incidents</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="risk-register" href="#">Risk Register</a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Resilience</div><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backup-and-recovery" href="#">Backup &amp; Recovery</a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Governance</div><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-policies" href="#">Security Policies</a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">System</div><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#">Settings</a><a aria-current="page" class="flex items-center px-space-sm py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="my-profile" href="#">My Profile</a></div></nav><div class="px-space-md pt-space-md"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-on-surface truncate">Marcus Vance</span><span class="inline-flex items-center px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Security Officer</span></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><span class="font-title-md text-title-md text-on-surface">SecureOrg</span></div><div class="flex items-center gap-space-md"><div class="relative hidden md:flex items-center"><span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3">search</span><input class="h-9 w-64 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none" placeholder="Search users, logs, policies..." type="search"/></div><span class="hidden lg:inline-block font-label-md text-label-md text-on-surface-variant">Oct 24, 2024</span><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute -top-1 -right-1 h-4 min-w-[16px] px-1 rounded-full bg-error text-on-error font-label-sm text-label-sm flex items-center justify-center">4</span></button><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="hidden sm:flex items-center gap-space-xs"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="my-profile" href="#">Profile</a><span class="text-on-surface-variant">/</span><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="login" href="#">Logout</a></div></div></div></header><main class="relative pt-16 bg-surface w-full px-8"><div class="flex flex-col w-full pb-16">
+<!-- Top Navigation & Context Trail -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-lg">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span>System</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">My Profile</span>
+</div>
+<div class="flex items-center gap-space-sm self-start sm:self-auto">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Zero-Trust Enclave v4.9.1
+      </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+        CAC/PIV Validated
+      </span>
+</div>
+</div>
+<!-- Page Title & Operational Subtitle -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">My Profile &amp; Security Credentials</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+        Manage personal administrative identity, cryptographic credentials, hardware security tokens, and active workstation sessions.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+        Export Profile (JSON)
+      </button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+        Request Temporary Elevation
+      </button>
+</div>
+</div>
+<!-- Profile Identity Header Panel -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm mb-space-xl">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="relative">
+<img alt="Marcus Vance Profile Photo" class="w-20 h-20 rounded-xl object-cover ring-2 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/>
+<span class="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-on-secondary shadow-sm" title="Security Officer Verified">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Marcus Vance</h2>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+              Security Officer (Tier 1 SoD)
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              Privileged Enclave
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-on-primary-fixed-variant font-label-sm text-label-sm">
+              Level 4 Clearance
+            </span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1 font-mono text-on-surface">
+<span class="text-on-surface-variant">ID:</span> #EMP-9402
+            </span>
+<span>•</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">mail</span>
+              marcus.vance@secureorg.internal
+            </span>
+<span>•</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">corporate_fare</span>
+              Security Operations (SecOps)
+            </span>
+<span>•</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">supervisor_account</span>
+              Reports to: Elena Rostova (CISO Delegate)
+            </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-space-sm pt-space-md lg:pt-0">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-[#16865c]"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Account Integrity</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Active &amp; FIPS 140-3 Attested</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cryptographic identity re-keyed 12d ago</span>
+</div>
+</div>
+</div>
+<!-- Navigation Tab Bar -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1 mb-space-xl scrollbar-none">
+<a class="px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container transition-colors whitespace-nowrap" href="#">
+      Personal Information
+    </a>
+<a class="px-4 py-2.5 rounded-lg font-label-lg text-label-lg bg-primary text-on-primary font-semibold shadow-sm whitespace-nowrap flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">key</span>
+      Security &amp; Credentials
+    </a>
+<a class="px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container transition-colors whitespace-nowrap flex items-center gap-1.5" href="#">
+      Hardware Tokens &amp; MFA
+      <span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">3</span>
+</a>
+<a class="px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container transition-colors whitespace-nowrap flex items-center gap-1.5" href="#">
+      Active Sessions
+      <span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">2</span>
+</a>
+<a class="px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container transition-colors whitespace-nowrap" href="#">
+      Personal Audit Trail
+    </a>
+</div>
+<!-- Primary Security Grid (Asymmetric Bento Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left Column: Master Credential & Security Posture (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Administrative Credential Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">password</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Administrative Master Password</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Used for root sudo elevation and PKI enclave unlocking</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#16865c]/10 text-[#16865c] font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16865c]"></span> Compliant
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md rounded-lg bg-surface-container-low mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Rotation Lifecycle</span>
+<p class="font-label-lg text-label-lg text-on-surface mt-0.5">Last changed 42 days ago</p>
+<p class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">Expires in 48 days (90-day cycle)</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Complexity &amp; Entropy</span>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex-1 h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">128-bit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Meets SecOps Tier 1 NIST 800-63B standards</p>
+</div>
+</div>
+<div class="space-y-space-sm mb-space-lg">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Minimum 20 characters with high-entropy salt</span>
+<span class="inline-flex items-center text-[#16865c] font-semibold gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Verified
+              </span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Hardware keystroke biometric cadence enabled</span>
+<span class="inline-flex items-center text-[#16865c] font-semibold gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Bound
+              </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">history</span>
+            Previous cycle: Jul 12, 2024
+          </div>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+            Change Master Password
+          </button>
+</div>
+</div>
+<!-- Offline Vault & Recovery Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">vpn_key_alert</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Emergency Recovery Keys</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Single-use cryptographic recovery hashes for disaster recovery and offline enclave rescue.
+              </p>
+<div class="mt-space-md flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="flex h-2.5 w-2.5 rounded-full bg-[#16865c]"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">6 of 6 Available</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stored in designated physical safe deposit box</span>
+</div>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors whitespace-nowrap" type="button">
+            Audit Vault Status
+          </button>
+</div>
+</div>
+<!-- Personal Security Posture & Compliance Summary -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Separation of Duties &amp; Compliance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quarterly SecOps administrative clearance validation</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-[#16865c]/10 text-[#16865c] font-label-sm text-label-sm font-semibold">
+            100% Attested
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-lg">
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">SoD Posture</span>
+<span class="material-symbols-outlined text-[16px] text-[#16865c]">check</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Zero Dual-Role Collisions</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">No conflicting developer or approval authorities mapped to this account.</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Signed Policies</span>
+<span class="material-symbols-outlined text-[16px] text-[#16865c]">done_all</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">4 of 4 Completed</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Key-Management v3, Incident Response v7, Zero-Trust Annex signed Oct 2024.</p>
+</div>
+</div>
+<!-- Recent Personal Security Events mini-table -->
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold">Recent Identity Events</span>
+<a class="font-label-sm text-label-sm text-secondary hover:underline" href="#">Full Log →</a>
+</div>
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[18px] text-[#16865c]">fingerprint</span>
+<div class="truncate">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">Hardware Token Challenge Passed (YubiKey 5C)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">auth.bastion.internal:443 • WebAuthn ECDSA-P256</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap ml-2">14m ago</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[18px] text-secondary">terminal</span>
+<div class="truncate">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">Privilege Elevation Granted (sudo -u secops-admin)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">10.24.8.119 • Teleport Session #SES-0981</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap ml-2">48m ago</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">verified_user</span>
+<div class="truncate">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">Cryptographic Attestation Re-check</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">Apple Secure Enclave T2/M3 • Passed integrity probe</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap ml-2">2h 10m ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Hardware MFA Keys & Active Workstation Sessions (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Hardware Security Keys & Registered MFA -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">usb</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Hardware &amp; MFA Keys</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">FIDO2 / WebAuthn &amp; Time-based credentials</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">3 Enrolled</span>
+</div>
+<!-- Authenticators List -->
+<div class="space-y-space-md mb-space-lg">
+<!-- Key 1: YubiKey 5C -->
+<div class="p-space-md rounded-lg bg-surface-container-low relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[24px] text-primary mt-0.5">key</span>
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">YubiKey 5C NFC</span>
+<span class="px-2 py-0.2 rounded text-[11px] bg-primary text-on-primary font-medium">Primary</span>
+</div>
+<p class="font-label-sm text-label-sm font-mono text-on-surface-variant mt-0.5">Serial: #YK-982410-X</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">FIDO2 Certified • Attested Aug 18, 2024</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-[#16865c] mt-1 shrink-0" title="Active"></span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-end gap-space-md">
+<button class="font-label-sm text-label-sm text-secondary hover:underline" type="button">View FIPS Cert</button>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">touch_app</span> Test Key
+              </button>
+</div>
+</div>
+<!-- Key 2: Secondary TOTP -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[24px] text-on-surface-variant mt-0.5">timer</span>
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">1Password / Google Auth</span>
+<span class="px-2 py-0.2 rounded text-[11px] bg-surface-container-high text-on-surface font-medium">Backup</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Active 30s Rolling TOTP (SHA-256)</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Last synced 14m ago</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-[#16865c] mt-1 shrink-0"></span>
+</div>
+</div>
+<!-- Key 3: Workstation Touch ID Passkey -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[24px] text-on-surface-variant mt-0.5">fingerprint</span>
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Workstation Touch ID</span>
+<span class="px-2 py-0.2 rounded text-[11px] bg-surface-container-high text-on-surface font-medium">Enclave Passkey</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">macOS Sonoma Hardware Secure Enclave</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Bound to device #WS-MAC-0142</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-[#16865c] mt-1 shrink-0"></span>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+          Enroll New Hardware Key
+        </button>
+</div>
+<!-- Active Workstations & Live Sessions Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">devices</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Active Sessions (2)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validated zero-trust administrative connections</p>
+</div>
+</div>
+</div>
+<div class="space-y-space-md mb-space-lg">
+<!-- Current Session -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">laptop_mac</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">macOS Sonoma 14.6 • Chrome 129</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-[#16865c]/10 text-[#16865c] font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16865c]"></span> Current Session
+              </span>
+</div>
+<div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">vpn_lock</span>
+                198.51.100.42 (Austin, TX, US)
+              </div>
+<p>Corporate Dedicated SecOps VPN Gateway #04</p>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm">
+<span>Started 2h 14m ago</span>
+<span class="text-secondary font-medium">Idle timeout in 12m 40s</span>
+</div>
+</div>
+</div>
+<!-- Secondary Active Session: Bastion Host -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface">terminal</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Linux SecOps Bastion (CLI)</span>
+</div>
+<button class="text-error font-label-sm text-label-sm font-semibold hover:underline" type="button">
+                Revoke Session
+              </button>
+</div>
+<div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">router</span>
+                10.24.8.119 (Private VPC Enclave)
+              </div>
+<p>Port: 22/SSH via Teleport Bastion Node #09</p>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm">
+<span>Started 48m ago</span>
+<span class="text-on-surface-variant font-mono">PID: 38402</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-error text-on-error hover:opacity-90 font-label-lg text-label-lg transition-opacity shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">gpp_bad</span>
+          Revoke All Other Sessions Immediately
+        </button>
+</div>
+</div>
+</div>
+<!-- Operational Footer Diagnostic Bar -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">encrypted</span>
+<span>Session Key ID: <code class="font-mono bg-surface-container-lowest px-1.5 py-0.5 rounded text-primary">0x8F92..A4E1</code> • Authenticated under SOC-2 Type II Scope</span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span>Next Mandatory Recertification: <strong class="text-on-surface">Dec 15, 2024</strong></span>
+<span class="text-surface-tint">•</span>
+<a class="text-secondary hover:underline" href="#">Download Security Audit Package</a>
+</div>
+</div>
+</div></main></div></body></html>

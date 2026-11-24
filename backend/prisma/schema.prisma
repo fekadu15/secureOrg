@@ -1,0 +1,427 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum AccountStatus {
+  PENDING_VERIFICATION
+  ACTIVE
+  SUSPENDED
+  LOCKED
+  DEACTIVATED
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+  EXPIRED
+}
+
+enum AlertSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum AlertStatus {
+  NEW
+  ACKNOWLEDGED
+  INVESTIGATING
+  RESOLVED
+  DISMISSED
+}
+
+enum IncidentStatus {
+  REPORTED
+  TRIAGED
+  CONTAINMENT
+  ERADICATION
+  RECOVERY
+  POST_INCIDENT_REVIEW
+  CLOSED
+}
+
+enum BackupType {
+  FULL
+  INCREMENTAL
+}
+
+enum BackupStatus {
+  QUEUED
+  RUNNING
+  SUCCESS
+  FAILED
+}
+
+enum MfaChallengePurpose {
+  LOGIN
+  ENROLLMENT
+}
+
+model User {
+  webAuthnCredentials        WebAuthnCredential[]
+  id                         String               @id @default(uuid())
+  email                      String               @unique
+  fullName                   String
+  phone                      String?
+  passwordHash               String
+  status                     AccountStatus        @default(PENDING_VERIFICATION)
+  failedLoginAttempts        Int                  @default(0)
+  lockoutUntil               DateTime?
+  mfaFailedAttempts          Int                  @default(0)
+  mfaLockoutUntil            DateTime?
+  verificationToken          String?
+  verificationTokenExpiresAt DateTime?
+  passwordResetToken         String?
+  passwordResetExpiresAt     DateTime?
+  unitId                     String?
+  unit                       OrganizationalUnit?  @relation(fields: [unitId], references: [id], onDelete: SetNull)
+  mfaEnabled                 Boolean              @default(false)
+  lastLoginAt                DateTime?
+  createdAt                  DateTime             @default(now())
+  updatedAt                  DateTime             @updatedAt
+
+  userRoles              UserRole[]
+  requestedRoleChanges   RoleChangeRequest[]     @relation("RequesterRelation")
+  approvedRoleChanges    RoleChangeRequest[]     @relation("ApproverRelation")
+  targetRoleChanges      RoleChangeRequest[]     @relation("TargetUserRelation")
+  sessions               Session[]
+  mfaFactor              MFAFactor?
+  recoveryCodes          RecoveryCode[]
+  mfaChallenges          MFAChallenge[]
+  auditEvents            AuditEvent[]
+  reportedIncidents      Incident[]              @relation("ReporterRelation")
+  assignedIncidents      Incident[]              @relation("AssigneeRelation")
+  assignedAlerts         SecurityAlert[]         @relation("AlertAssigneeRelation")
+  policyAcknowledgements PolicyAcknowledgement[]
+
+  @@index([email])
+  @@index([status])
+}
+
+model OrganizationalUnit {
+  id          String               @id @default(uuid())
+  name        String
+  code        String               @unique
+  description String?
+  parentId    String?
+  parent      OrganizationalUnit?  @relation("UnitHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
+  children    OrganizationalUnit[] @relation("UnitHierarchy")
+  users       User[]
+  createdAt   DateTime             @default(now())
+  updatedAt   DateTime             @updatedAt
+}
+
+model Role {
+  id           String   @id @default(uuid())
+  name         String   @unique
+  displayName  String
+  description  String?
+  isPrivileged Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  userRoles       UserRole[]
+  rolePermissions RolePermission[]
+  roleChanges     RoleChangeRequest[]
+}
+
+model Permission {
+  id          String  @id @default(uuid())
+  code        String  @unique
+  name        String
+  module      String
+  description String?
+
+  rolePermissions RolePermission[]
+}
+
+model RolePermission {
+  id           String     @id @default(uuid())
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+}
+
+model UserRole {
+  id          String    @id @default(uuid())
+  userId      String
+  roleId      String
+  assignedBy  String?
+  assignedAt  DateTime  @default(now())
+  expiresAt   DateTime?
+  revokedAt   DateTime?
+  isTemporary Boolean   @default(false)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roleId])
+}
+
+model RoleChangeRequest {
+  id             String        @id @default(uuid())
+  requesterId    String
+  targetUserId   String
+  roleId         String
+  justification  String
+  durationDays   Int?
+  status         RequestStatus @default(PENDING)
+  approverId     String?
+  decisionReason String?
+  decisionAt     DateTime?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  requester  User  @relation("RequesterRelation", fields: [requesterId], references: [id], onDelete: Cascade)
+  targetUser User  @relation("TargetUserRelation", fields: [targetUserId], references: [id], onDelete: Cascade)
+  role       Role  @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  approver   User? @relation("ApproverRelation", fields: [approverId], references: [id], onDelete: SetNull)
+
+  @@index([status])
+  @@index([requesterId])
+  @@index([targetUserId])
+}
+
+model Session {
+  id               String   @id @default(uuid())
+  userId           String
+  refreshTokenHash String   @unique
+  ipAddress        String?
+  userAgent        String?
+  isValid          Boolean  @default(true)
+  expiresAt        DateTime
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model MFAFactor {
+  id               String    @id @default(uuid())
+  userId           String    @unique
+  secretEncrypted  String
+  secretIv         String
+  secretTag        String
+  enabledAt        DateTime  @default(now())
+  lastUsedAt       DateTime?
+  lastUsedTimeStep Int?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model RecoveryCode {
+  id        String    @id @default(uuid())
+  userId    String
+  codeHash  String
+  isUsed    Boolean   @default(false)
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model MFAChallenge {
+  id              String              @id @default(uuid())
+  userId          String
+  tokenHash       String              @unique
+  purpose         MfaChallengePurpose
+  secretEncrypted String?
+  secretIv        String?
+  secretTag       String?
+  expiresAt       DateTime
+  consumedAt      DateTime?
+  createdAt       DateTime            @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, purpose])
+  @@index([expiresAt])
+}
+
+model AuditEvent {
+  id           String   @id @default(uuid())
+  actorId      String?
+  actorEmail   String?
+  action       String
+  resource     String
+  resourceId   String?
+  status       String // "SUCCESS", "FAILURE", "DENIED"
+  ipAddress    String?
+  userAgent    String?
+  metadata     Json?
+  previousHash String // Hash of prior event (SHA-256)
+  eventHash    String // SHA-256(previousHash + timestamp + actor + action + metadata)
+  timestamp    DateTime @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([timestamp])
+  @@index([action])
+  @@index([actorEmail])
+  @@index([eventHash])
+}
+
+model SecurityAlert {
+  id              String        @id @default(uuid())
+  type            String
+  severity        AlertSeverity @default(MEDIUM)
+  title           String
+  description     String
+  status          AlertStatus   @default(NEW)
+  assigneeId      String?
+  sourceEventId   String?
+  resolutionNotes String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  resolvedAt      DateTime?
+
+  assignee User? @relation("AlertAssigneeRelation", fields: [assigneeId], references: [id], onDelete: SetNull)
+
+  @@index([status])
+  @@index([severity])
+}
+
+model BackupRecord {
+  id               String       @id @default(uuid())
+  filename         String
+  backupType       BackupType   @default(FULL)
+  fileSize         BigInt?      @default(0)
+  status           BackupStatus @default(QUEUED)
+  checksum         String? // SHA-256
+  storagePath      String
+  encryptionMethod String       @default("AES-256-GCM")
+  restoredAt       DateTime?
+  restoreStatus    String?
+  createdAt        DateTime     @default(now())
+  completedAt      DateTime?
+
+  @@index([status])
+}
+
+model Incident {
+  id               String         @id @default(uuid())
+  trackingNumber   String         @unique
+  title            String
+  category         String
+  severity         AlertSeverity  @default(MEDIUM)
+  status           IncidentStatus @default(REPORTED)
+  reporterId       String
+  assigneeId       String?
+  description      String
+  containmentNotes String?
+  eradicationNotes String?
+  recoveryNotes    String?
+  reviewNotes      String?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  closedAt         DateTime?
+
+  reporter User  @relation("ReporterRelation", fields: [reporterId], references: [id], onDelete: Cascade)
+  assignee User? @relation("AssigneeRelation", fields: [assigneeId], references: [id], onDelete: SetNull)
+
+  @@index([status])
+  @@index([severity])
+  @@index([trackingNumber])
+}
+
+model Risk {
+  id                String    @id @default(uuid())
+  title             String
+  category          String
+  description       String
+  likelihood        Int       @default(3) // 1-5
+  impact            Int       @default(3) // 1-5
+  riskScore         Int       @default(9) // likelihood * impact
+  status            String    @default("IDENTIFIED") // "IDENTIFIED", "ASSESSING", "TREATING", "ACCEPTED", "MITIGATED"
+  owner             String?
+  treatmentStrategy String?
+  reviewDate        DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([status])
+  @@index([riskScore])
+}
+
+model Policy {
+  id          String   @id @default(uuid())
+  title       String
+  code        String   @unique
+  version     String   @default("1.0")
+  category    String
+  content     String
+  status      String   @default("PUBLISHED") // "DRAFT", "PUBLISHED", "ARCHIVED"
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  acknowledgements PolicyAcknowledgement[]
+}
+
+model PolicyAcknowledgement {
+  id             String   @id @default(uuid())
+  policyId       String
+  userId         String
+  ipAddress      String?
+  acknowledgedAt DateTime @default(now())
+
+  policy Policy @relation(fields: [policyId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([policyId, userId])
+}
+
+model SystemSetting {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  value       String
+  category    String   @default("GENERAL")
+  description String?
+  updatedBy   String?
+  updatedAt   DateTime @updatedAt
+}
+
+model WebAuthnCredential {
+  id           String    @id @default(uuid())
+  userId       String
+  credentialId String    @unique
+  publicKey    Bytes
+  counter      Int       @default(0)
+  transports   String[]  @default([])
+  deviceType   String?
+  backedUp     Boolean   @default(false)
+  name         String    @default("My Passkey")
+  createdAt    DateTime  @default(now())
+  lastUsedAt   DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model WebAuthnChallenge {
+  id        String   @id @default(uuid())
+  userId    String?
+  challenge String   @unique
+  purpose   String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}

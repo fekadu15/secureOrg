@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>SecureOrg – Enterprise Security</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-container":"#d4975f","on-primary":"#ffffff","inverse-surface":"#273143","on-primary-fixed":"#001c3b","tertiary-container":"#593000","background":"#f9f9ff","surface-tint":"#3f5f8d","error":"#ba1a1a","surface-container-highest":"#d9e3fb","on-background":"#111c2d","on-secondary-fixed-variant":"#004883","surface-container":"#e8eeff","surface-container-high":"#dfe8ff","on-secondary-fixed":"#001c39","surface-dim":"#d0daf2","primary-container":"#173b67","primary-fixed-dim":"#a8c8fc","on-tertiary-fixed":"#2d1600","inverse-on-surface":"#ecf0ff","primary-fixed":"#d5e3ff","outline":"#737780","on-primary-container":"#86a6d8","on-error":"#ffffff","on-tertiary-fixed-variant":"#683c0b","secondary-container":"#80b6fe","tertiary-fixed":"#ffdcc0","secondary-fixed-dim":"#a4c9ff","secondary":"#2060a3","on-surface":"#111c2d","surface-bright":"#f9f9ff","tertiary-fixed-dim":"#fab97e","tertiary":"#3a1d00","on-secondary-container":"#004681","outline-variant":"#c3c6d0","inverse-primary":"#a8c8fc","primary":"#00254b","on-surface-variant":"#43474f","surface-container-low":"#f0f3ff","on-secondary":"#ffffff","error-container":"#ffdad6","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#264774","on-tertiary":"#ffffff","surface":"#f9f9ff","secondary-fixed":"#d4e3ff","surface-variant":"#d9e3fb","on-error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1.5rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2rem"},"fontFamily":{"title-lg":["Inter"],"body-sm":["Inter"],"title-md":["Inter"],"label-lg":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-low z-50 flex flex-col justify-between py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-md flex items-center gap-space-sm mb-space-lg"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary">SecureOrg</span><span class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Security</span></div></div><nav class="flex-1 overflow-y-auto px-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Main</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Identity &amp; Access</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="users" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Users</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="organizational-units" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span>Organizational Units</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Roles &amp; Permissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="role-change-requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_ind</span><span>Role Change Requests</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="access-reviews" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Access Reviews</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Security Operations</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-alerts" href="#"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span>Security Alerts</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incidents" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidents</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="risk-register" href="#"><span class="material-symbols-outlined text-[20px]">gpp_maybe</span><span>Risk Register</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Resilience</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backup-and-recovery" href="#"><span class="material-symbols-outlined text-[20px]">backup</span><span>Backup &amp; Recovery</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Governance</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-policies" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><span>Security Policies</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">System</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>My Profile</span></a></div></nav><div class="px-space-md pt-space-md"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-on-surface truncate">Marcus Vance</span><span class="inline-flex items-center px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Security Officer</span></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><span class="font-title-md text-title-md text-on-surface">SecureOrg</span></div><div class="flex items-center gap-space-md"><div class="relative hidden md:flex items-center"><span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3">search</span><input class="h-9 w-64 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none" placeholder="Search users, logs, policies..." type="search"/></div><span class="hidden lg:inline-block font-label-md text-label-md text-on-surface-variant">Oct 24, 2024</span><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute -top-1 -right-1 h-4 min-w-[16px] px-1 rounded-full bg-error text-on-error font-label-sm text-label-sm flex items-center justify-center">4</span></button><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="hidden sm:flex items-center gap-space-xs"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="my-profile" href="#">Profile</a><span class="text-on-surface-variant">/</span><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="login" href="#">Logout</a></div></div></div></header><main class="relative pt-16 bg-surface w-full px-8"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Breadcrumb & Title Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span>Identity &amp; Access</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Role Change Requests</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Privileged Role Change Requests</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Strict dual-custody approval workflow with Separation of Duties (SoD) enforcement.
+      </p>
+</div>
+<!-- Page Actions -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md h-10 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Audit Log</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md h-10 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:bg-primary transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_moderator</span>
+<span>+ Request Role Elevation</span>
+</button>
+</div>
+</div>
+<!-- Critical Security Warning Banner -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-lowest p-space-md mb-space-lg shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex items-start gap-space-md">
+<div class="p-2 rounded-lg bg-error-container text-on-error-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">gpp_maybe</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">
+            Independent Approval Policy &amp; Separation of Duties (SoD) Enforced
+          </h2>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm uppercase font-bold tracking-wider">
+            Mandatory Compliance
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+          Requesters cannot approve their own requests. Role elevation requires an authorized Security Officer approval with documented justification. Pending requests <strong class="text-on-surface font-semibold">NEVER</strong> grant active privileges prior to cryptographic sign-off.
+        </p>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs self-center px-space-md py-1.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>FIPS 140-3 Hardware Verified</span>
+</div>
+</div>
+</div>
+<!-- Bento Stats Metrics Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<div class="rounded-lg bg-surface-container-lowest p-space-md shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Pending Review</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">7</span>
+<span class="font-label-sm text-label-sm text-error font-medium">3 urgent</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">hourglass_top</span>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-space-md shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">SoD Violations Blocked</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Past 30d</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">security</span>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-space-md shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Mean Elevation Duration</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">4.8h</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">-18% vs avg</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-space-md shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Active HSM Signatures</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">14</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Valid session</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">vpn_key</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace: Split View with Requests Table & Decision Inspector -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Table & Filters (8 cols) -->
+<div class="xl:col-span-8 space-y-space-md">
+<!-- Status Tabs -->
+<div class="flex flex-wrap items-center gap-space-xs rounded-lg bg-surface-container-low p-1 shadow-sm">
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+          All Requests <span class="ml-1 opacity-70">(28)</span>
+</button>
+<button class="relative px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm flex items-center gap-1.5" type="button">
+<span>Pending Approval</span>
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+</span>
+<span class="ml-0.5 px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">7</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+          Approved <span class="ml-1 opacity-70">(14)</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+          Rejected <span class="ml-1 opacity-70">(4)</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+          Expired / Cancelled <span class="ml-1 opacity-70">(3)</span>
+</button>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="rounded-lg bg-surface-container-lowest p-space-md shadow-sm space-y-space-sm">
+<div class="flex flex-col sm:flex-row items-center gap-space-sm">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3 top-1/2 -translate-y-1/2">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container" placeholder="Search by Request ID, requester, target user..." type="text" value="#REQ-2024-0891"/>
+</div>
+<div class="flex items-center gap-space-xs w-full sm:w-auto">
+<div class="relative flex-1 sm:flex-initial">
+<select class="h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none appearance-none cursor-pointer w-full">
+<option>Role: All Tiers</option>
+<option>Tier 1 (Security Officer)</option>
+<option>Tier 2 (Domain Admin)</option>
+<option>Tier 3 (DevOps Lead)</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<div class="relative flex-1 sm:flex-initial">
+<select class="h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none appearance-none cursor-pointer w-full">
+<option>Department: All</option>
+<option>SecOps &amp; Threat Intelligence</option>
+<option>Cloud Infrastructure</option>
+<option>Finance Platform</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<div class="relative flex-1 sm:flex-initial">
+<select class="h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none appearance-none cursor-pointer w-full">
+<option>Urgency: High / Critical</option>
+<option>All Urgencies</option>
+<option>Standard (48h)</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Filter Chips / Scope Info -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Active Filters:</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+              Status: Pending
+              <button class="hover:text-error" type="button"><span class="material-symbols-outlined text-[12px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+              Urgency: High
+              <button class="hover:text-error" type="button"><span class="material-symbols-outlined text-[12px]">close</span></button>
+</span>
+<button class="font-label-sm text-label-sm text-secondary hover:underline" type="button">Reset Filters</button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 4 of 28 requests</span>
+</div>
+</div>
+<!-- Requests Interactive Queue Table -->
+<div class="rounded-lg bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md font-semibold">Request ID</th>
+<th class="py-3 px-space-md font-semibold">Target User</th>
+<th class="py-3 px-space-md font-semibold">Elevation Target</th>
+<th class="py-3 px-space-md font-semibold">Requester &amp; Reason</th>
+<th class="py-3 px-space-md font-semibold">Status / Custody</th>
+<th class="py-3 px-space-md font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container text-body-sm font-body-sm text-on-surface">
+<!-- Row 1: Selected / Eligible Pending Approval -->
+<tr class="bg-surface-container-high/40 hover:bg-surface-container-high transition-colors cursor-pointer group">
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1 font-mono font-semibold text-primary">
+<span>#REQ-2024-0891</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-primary transition-opacity" title="Copy ID" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-error font-medium inline-flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error inline-block"></span>
+                    Urgent (48h JIT)
+                  </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Close up professional portrait of David Chen, IT Department Manager wearing professional dark spectacles against an architectural cybersecurity control center background with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDaZTdpMKZD4hSfH7oGgPIV0dDJvv2bf0NMQNmBWA0eET_STbQtK2OVgeY1Q6row7FScqvx1v0n9hxqUnZhbCgFORhn8FXOSCz3vYeA2QqgS0qAzmkUbJ7haY1hQ4lDnyu7pMOAAcKGdxdWzK7QtSwnASqWF-sqGWKcx3T0g9iwBUpqpmryciOJyZBTgv3mSpIvw6UcYoB8TmdFKgNDnRo5MyF7HcjEUePL2p3mBZE"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">David Chen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">david.c@secureorg.internal</span>
+<span class="inline-block mt-0.5 px-1 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant w-fit">
+                        Dept. Manager
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-0.5">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold w-fit">
+<span class="material-symbols-outlined text-[13px]">key</span>
+                      Security Officer
+                    </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tier 1 Privileged</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col min-w-[200px]">
+<div class="font-label-md text-label-md text-on-surface">By: <span class="font-semibold">N. Patel</span> (SecOps)</div>
+<p class="text-on-surface-variant line-clamp-1 mt-0.5 text-body-sm">
+                      Covering Incident INC-402 on-call rotation • JIRA-SEC-912
+                    </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 24, 2024 14:00 UTC</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                    Awaiting Sec Officer
+                  </span>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">SoD Checked: Safe</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+                      Approve
+                    </button>
+<button class="px-space-sm py-1 rounded bg-surface-container text-error font-label-md text-label-md hover:bg-error-container hover:text-on-error-container transition-colors" type="button">
+                      Reject
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Self-Request Prohibited Example -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1 font-mono font-semibold text-primary">
+<span>#REQ-2024-0890</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Scheduled</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Professional studio portrait of Marcus Vance, enterprise Security Officer wearing sleek corporate navy attire in an office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJR9dsy6YGzMvpBi7TkxnNRGu7FvAVJE_NwJ-rFmHdPH3El38bFPHLST50um29fMk_14C6_qUXKIUKtY3UMCfZycsajN1wJYI6YSydjFiVGgWlGHrtPYWO6H8yrg33ukYYR8BVOVYHdGSq78-riE0G0ebVMP6hQbM9nL6qr8DQraiJ4FhnQf1_VT5yynJ95MngjnWrnAzbT8dMyzaS9zpx5z2AiWHjizsysJvbyPf"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Marcus Vance</span>
+<span class="px-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">You</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">marcus.v@secureorg.internal</span>
+<span class="inline-block mt-0.5 px-1 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant w-fit">
+                        Security Officer
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-0.5">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold w-fit">
+<span class="material-symbols-outlined text-[13px]">vpn_lock</span>
+                      Root CA Signer
+                    </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tier 0 Critical</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col min-w-[200px]">
+<div class="font-label-md text-label-md text-on-surface">By: <span class="font-semibold">Marcus Vance</span> (Self)</div>
+<p class="text-on-surface-variant line-clamp-1 mt-0.5 text-body-sm">
+                      Quarterly mTLS Certificate rotation • RFC-8812
+                    </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 24, 2024 11:15 UTC</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                    Self-Approval Prohibited
+                  </span>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Needs Peer Sec Officer</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm opacity-80 cursor-not-allowed">
+<span class="material-symbols-outlined text-[14px]">block</span>
+                    Disabled (Self-Request)
+                  </span>
+</td>
+</tr>
+<!-- Row 3: Approved with Signer Badge -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1 font-mono font-semibold text-primary">
+<span>#REQ-2024-0887</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active 24h</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Editorial portrait of Maya Lin, Senior Cloud Systems Architect in an ultra-modern enterprise operations hub with high-contrast screen displays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjW8jum6cNtuij937z7PzLvZktJNR1yMyAcqEXApkNA69T0w85mi8WExIqOXae-duOBCvmjIhZVy-MmluIjKZWnAXAO3Z9vshjPrD3V17OiglV8C6yoxUxkHuSAcZeYpY9lW-IYZ7vBBULfR2PnsRTbkMc-hSlE_efrmkDFXf5hfpc6ilxya3vNqH2VaFyxha26ZgjqJsmLY4-TT4uIvPZ8YIYIuuuAsGt8CfYOhYK"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Maya Lin</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">m.lin@secureorg.internal</span>
+<span class="inline-block mt-0.5 px-1 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant w-fit">
+                        Cloud Architect
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-0.5">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold w-fit">
+<span class="material-symbols-outlined text-[13px]">cloud</span>
+                      K8s Cluster Admin
+                    </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tier 2 Infrastructure</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col min-w-[200px]">
+<div class="font-label-md text-label-md text-on-surface">By: <span class="font-semibold">K. Larsson</span> (DevOps)</div>
+<p class="text-on-surface-variant line-clamp-1 mt-0.5 text-body-sm">
+                      Patching zero-day ingress vulnerability CVE-2024-411
+                    </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 23, 2024 18:20 UTC</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+                    Approved by E. Rostova
+                  </span>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Oct 23, 18:45 UTC</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<a class="font-label-sm text-label-sm text-secondary hover:underline inline-flex items-center gap-0.5" href="#">
+<span>Audit Trail &amp; Diff</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 4: Rejected Row -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1 font-mono font-semibold text-primary">
+<span>#REQ-2024-0885</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Terminated</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait of Jordan Blake, IT Systems Associate against a clean corporate white office background with subtle blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl3WF0ZW-mm3lym4cWanXYAHW9vk1njvkoDfp2tI1Zcva3BBHDk0slukoeMwkgWepXARcqbEXCpJt-98guXWzrvaL1xY8OrYoCbyGz-RFahXJ3kmjf7pj0FyoXbbROZhf_YZXVp7cNIkoDja_CO39JKO8_egGWaGSSzijjp_WqBv7eZqgeeGFKCZUh-YA0xwOiixOzWie-Uxtybnuz-branNgejYF7qarC4KsTRqRC"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Jordan Blake</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">j.blake@secureorg.internal</span>
+<span class="inline-block mt-0.5 px-1 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant w-fit">
+                        Analyst L1
+                      </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-0.5">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold w-fit">
+<span class="material-symbols-outlined text-[13px]">database</span>
+                      Production DB Owner
+                    </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tier 1 Critical</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col min-w-[200px]">
+<div class="font-label-md text-label-md text-on-surface">By: <span class="font-semibold">Jordan Blake</span> (Self)</div>
+<p class="text-on-surface-variant line-clamp-1 mt-0.5 text-body-sm">
+                      Need access for debugging query speed issues
+                    </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 22, 2024 09:12 UTC</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+                    Rejected: Bad Justification
+                  </span>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Oct 22, 10:04 UTC</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<a class="font-label-sm text-label-sm text-secondary hover:underline inline-flex items-center gap-0.5" href="#">
+<span>Audit Trail</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Displaying 1-4 of 28 records</span>
+<div class="flex items-center gap-space-xs">
+<button class="p-1 rounded hover:bg-surface-container transition-colors disabled:opacity-30" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold text-on-surface">1</span>
+<button class="px-2 py-0.5 rounded hover:bg-surface-container transition-colors" type="button">2</button>
+<button class="px-2 py-0.5 rounded hover:bg-surface-container transition-colors" type="button">3</button>
+<button class="p-1 rounded hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Decision Inspector & Diff Panel (4 cols) -->
+<div class="xl:col-span-4 space-y-space-md">
+<div class="rounded-lg bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<!-- Inspector Header -->
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase tracking-wider">
+                Active Selection
+              </span>
+<span class="font-mono text-label-md font-bold text-primary">#REQ-2024-0891</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mt-1">Request Detail &amp; Decision Inspector</h3>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant transition-colors" title="Expand view" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_full</span>
+</button>
+</div>
+<!-- Target User Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Square crop avatar of David Chen with glasses in business attire on solid neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEV18yESxm20alb4oq7hJsAnZ5lQxNCdNTh3Ww9aBVPrZclwQYW_PdWAxI5IIToLg-dK_GQcEvyodVOfQFDdCVS7v1pcb7QOnf31RSstIh0RMOYjLYSc5pEdGGBBoY5o8N41Qq7KK7_oOjczno4sGQkcLnoRnslRZ-6IO6lIkmPIZ3l4hwGGjLXDQm7j4rRIcfjHvXw9MA3vtaRNLB2zEJqABUTaCSmiukCkEDRX-T"/>
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg font-semibold text-on-surface truncate">David Chen</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Badge: #EMP-8104 • Engineering</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-secondary">verified</span>
+</div>
+<!-- Role Transition Visualizer -->
+<div class="space-y-space-xs">
+<div class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold tracking-wider">
+            Role Transition &amp; Privilege Delta
+          </div>
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Current Role</span>
+<span class="font-medium text-on-surface">Department Manager (Tier 3)</span>
+</div>
+<div class="flex items-center justify-center py-1">
+<div class="h-6 w-6 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm bg-surface-container-lowest p-2 rounded">
+<span class="font-semibold text-primary">Requested Role</span>
+<span class="font-semibold text-primary">Security Officer (Tier 1 Privileged)</span>
+</div>
+</div>
+</div>
+<!-- Elevated Privileges To Be Granted -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold tracking-wider">
+              Elevated Privileges Granted (6)
+            </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Detailed diff</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+                secops:audit:view_unmasked
+              </span>
+<span class="font-mono text-[11px] text-on-surface-variant">+ADD</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">rule</span>
+                siem:incident:triage_and_isolate
+              </span>
+<span class="font-mono text-[11px] text-on-surface-variant">+ADD</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">key</span>
+                iam:keys:rotate_emergency
+              </span>
+<span class="font-mono text-[11px] text-on-surface-variant">+ADD</span>
+</div>
+</div>
+</div>
+<!-- Compliance & Guardrails Check -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Separation of Duties (SoD)</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+              PASSED (0 Conflicts)
+            </span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Elevation Lifecycle</span>
+<span class="text-on-surface font-semibold">Auto-expires in 48 hours</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Expiry Timestamp</span>
+<span class="font-mono text-on-surface text-[12px]">Oct 26, 2024, 14:00 UTC</span>
+</div>
+</div>
+<!-- Ticket Reference & Justification -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Documented Justification</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-normal">
+            "Primary officer on leave. Assigned lead responder for critical Incident INC-402 on-call schedule. Reference JIRA-SEC-912 ticket."
+          </p>
+</div>
+<!-- Decision Rationale Input Box -->
+<div class="space-y-space-xs">
+<label class="block font-label-md text-label-md font-semibold text-on-surface" for="decision-comments">
+            Decision Rationale <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container resize-none" id="decision-comments" placeholder="Enter mandatory approval/rejection rationale for immutable audit trail..." rows="3"></textarea>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Cryptographically sealed and signed by Marcus Vance (#SEC-09)
+          </span>
+</div>
+<!-- Modal Actions Buttons -->
+<div class="pt-space-xs space-y-space-xs">
+<button class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-space-xs shadow-sm" id="btn-approve-elevation" type="button">
+<span class="material-symbols-outlined text-[20px]">encrypted</span>
+<span>Approve Elevation with HSM Signature</span>
+</button>
+<button class="w-full h-10 rounded-lg bg-surface-container text-error font-label-md text-label-md font-semibold hover:bg-error-container hover:text-on-error-container transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>Reject Request</span>
+</button>
+</div>
+<!-- Interactive Toast Feedback for Prototype -->
+<div class="hidden p-space-sm rounded-lg bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-between" id="action-toast">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">verified</span>
+<span>HSM Sign-off executed. Certificate pinned to blockchain audit log.</span>
+</div>
+<button class="opacity-70 hover:opacity-100" onclick="document.getElementById('action-toast').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Compliance Context Info Card -->
+<div class="rounded-lg bg-surface-container-low p-space-md space-y-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+<span>Policy SOX-404 / SOC2-CC6</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Privileged role elevations are subjected to automated revocations. Inactive sessions are automatically evicted after 15 minutes of non-activity.
+        </p>
+</div>
+</div>
+</div>
+<script>
+    // Lightweight interactivity for demonstration within the web dashboard
+    const approveBtn = document.getElementById('btn-approve-elevation');
+    const toast = document.getElementById('action-toast');
+    if (approveBtn && toast) {
+      approveBtn.addEventListener('click', () => {
+        toast.classList.remove('hidden');
+        approveBtn.classList.add('opacity-75');
+        approveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Validating HSM Token...</span>';
+        setTimeout(() => {
+          approveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Elevation Approved & Sealed</span>';
+          approveBtn.classList.remove('bg-primary-container');
+          approveBtn.classList.add('bg-secondary');
+        }, 1200);
+      });
+    }
+  </script>
+</div></main></div></body></html>

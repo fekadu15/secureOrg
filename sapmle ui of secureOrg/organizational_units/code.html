@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>SecureOrg – Enterprise Security</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-container":"#d4975f","on-primary":"#ffffff","inverse-surface":"#273143","on-primary-fixed":"#001c3b","tertiary-container":"#593000","background":"#f9f9ff","surface-tint":"#3f5f8d","error":"#ba1a1a","surface-container-highest":"#d9e3fb","on-background":"#111c2d","on-secondary-fixed-variant":"#004883","surface-container":"#e8eeff","surface-container-high":"#dfe8ff","on-secondary-fixed":"#001c39","surface-dim":"#d0daf2","primary-container":"#173b67","primary-fixed-dim":"#a8c8fc","on-tertiary-fixed":"#2d1600","inverse-on-surface":"#ecf0ff","primary-fixed":"#d5e3ff","outline":"#737780","on-primary-container":"#86a6d8","on-error":"#ffffff","on-tertiary-fixed-variant":"#683c0b","secondary-container":"#80b6fe","tertiary-fixed":"#ffdcc0","secondary-fixed-dim":"#a4c9ff","secondary":"#2060a3","on-surface":"#111c2d","surface-bright":"#f9f9ff","tertiary-fixed-dim":"#fab97e","tertiary":"#3a1d00","on-secondary-container":"#004681","outline-variant":"#c3c6d0","inverse-primary":"#a8c8fc","primary":"#00254b","on-surface-variant":"#43474f","surface-container-low":"#f0f3ff","on-secondary":"#ffffff","error-container":"#ffdad6","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#264774","on-tertiary":"#ffffff","surface":"#f9f9ff","secondary-fixed":"#d4e3ff","surface-variant":"#d9e3fb","on-error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1.5rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2rem"},"fontFamily":{"title-lg":["Inter"],"body-sm":["Inter"],"title-md":["Inter"],"label-lg":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-low z-50 flex flex-col justify-between py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-md flex items-center gap-space-sm mb-space-lg"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary">SecureOrg</span><span class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Security</span></div></div><nav class="flex-1 overflow-y-auto px-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Main</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Identity &amp; Access</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="users" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Users</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="organizational-units" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span>Organizational Units</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Roles &amp; Permissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="role-change-requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_ind</span><span>Role Change Requests</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="access-reviews" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Access Reviews</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Security Operations</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-alerts" href="#"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span>Security Alerts</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incidents" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidents</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="risk-register" href="#"><span class="material-symbols-outlined text-[20px]">gpp_maybe</span><span>Risk Register</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Resilience</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backup-and-recovery" href="#"><span class="material-symbols-outlined text-[20px]">backup</span><span>Backup &amp; Recovery</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Governance</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-policies" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><span>Security Policies</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">System</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>My Profile</span></a></div></nav><div class="px-space-md pt-space-md"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-on-surface truncate">Marcus Vance</span><span class="inline-flex items-center px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Security Officer</span></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><span class="font-title-md text-title-md text-on-surface">SecureOrg</span></div><div class="flex items-center gap-space-md"><div class="relative hidden md:flex items-center"><span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3">search</span><input class="h-9 w-64 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none" placeholder="Search users, logs, policies..." type="search"/></div><span class="hidden lg:inline-block font-label-md text-label-md text-on-surface-variant">Oct 24, 2024</span><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute -top-1 -right-1 h-4 min-w-[16px] px-1 rounded-full bg-error text-on-error font-label-sm text-label-sm flex items-center justify-center">4</span></button><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="hidden sm:flex items-center gap-space-xs"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="my-profile" href="#">Profile</a><span class="text-on-surface-variant">/</span><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="login" href="#">Logout</a></div></div></div></header><main class="relative pt-16 bg-surface w-full px-8"><div class="flex flex-col w-full pb-space-xl">
+<!-- Page Header & Global Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-lg">
+<div class="flex flex-col gap-space-xs">
+<nav class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="hover:text-primary transition-colors cursor-pointer">Identity &amp; Access</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Organizational Units</span>
+</nav>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Organizational Units &amp; Hierarchy</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Structure departments, enforce nested security policies, and manage organizational delegation across global infrastructure.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap self-start md:self-auto">
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 bg-surface-container-lowest text-on-surface rounded-lg font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">account_tree</span>
+<span>Export Hierarchy Tree</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg shadow-sm hover:bg-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create Organizational Unit</span>
+</button>
+</div>
+</div>
+<!-- Top Summary KPI Banner -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Units</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">12 Departments</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">layers</span> 3 nesting tiers
+        </span>
+</div>
+<div class="h-10 w-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Root Organization</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate mt-1">SecureOrg Global Corp</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">vpn_key</span> Master Anchor
+        </span>
+</div>
+<div class="h-10 w-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">domain</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Assigned Identities</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">1,284 Users</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span> 100% active mapping
+        </span>
+</div>
+<div class="h-10 w-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Policy Compliance</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-1">100% Mandate</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span> Zero-Trust Strict Active
+        </span>
+</div>
+<div class="h-10 w-10 rounded-lg bg-secondary-container/30 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Main 2-Column Split Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Hierarchy Navigation (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Tree Control Header -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">schema</span>
+            Organizational Tree
+          </span>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors font-label-sm text-label-sm" id="expandAllBtn" title="Expand All" type="button">
+              Expand
+            </button>
+<span>•</span>
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors font-label-sm text-label-sm" id="collapseAllBtn" title="Collapse All" type="button">
+              Collapse
+            </button>
+</div>
+</div>
+<!-- Search OU input -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Search departments or codes..." type="search"/>
+</div>
+</div>
+<!-- Hierarchy Tree Container -->
+<div class="p-space-sm overflow-y-auto max-h-[750px] space-y-1">
+<!-- Root Node -->
+<div class="rounded-lg bg-surface-container-low p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+<span class="material-symbols-outlined text-[20px] text-primary">domain</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-primary font-semibold truncate">SecureOrg Enterprise Root</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1,284 members</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-container text-on-primary">Root</span>
+</div>
+<!-- Level 1: Executive & Legal -->
+<div class="pl-4 pt-1">
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">chevron_right</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">folder</span>
+<span class="font-body-md text-body-md text-on-surface truncate">Executive &amp; Legal</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">18</span>
+</div>
+</div>
+<!-- Level 1: Security Operations (Active Node) -->
+<div class="pl-4 pt-1">
+<div class="flex items-center justify-between p-2 rounded-lg bg-primary-container text-on-primary shadow-sm cursor-pointer">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-primary">expand_more</span>
+<span class="material-symbols-outlined text-[18px] text-on-primary">shield</span>
+<span class="font-label-lg text-label-lg font-semibold truncate">Security Operations (SecOps)</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/20 px-2 py-0.5 rounded text-on-primary font-medium">34</span>
+</div>
+<!-- Level 2 Sub-units under SecOps -->
+<div class="pl-6 pt-1 space-y-1">
+<div class="flex items-center justify-between p-1.5 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary">lan</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Incident Response &amp; Forensics</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary">lan</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Threat Intelligence &amp; Hunt</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">11</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary">lan</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Identity &amp; Access Governance</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">9</span>
+</div>
+</div>
+</div>
+<!-- Level 1: Engineering & Infrastructure -->
+<div class="pl-4 pt-1">
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">chevron_right</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">folder</span>
+<span class="font-body-md text-body-md text-on-surface truncate">Engineering &amp; Infrastructure</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">642</span>
+</div>
+</div>
+<!-- Level 1: Corporate & Finance -->
+<div class="pl-4 pt-1">
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">chevron_right</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">folder</span>
+<span class="font-body-md text-body-md text-on-surface truncate">Corporate &amp; Finance</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">590</span>
+</div>
+</div>
+</div>
+<!-- Tree Bottom Meta Card -->
+<div class="p-space-md bg-surface-container-low mt-auto">
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="font-body-sm text-body-sm leading-tight">Drag and drop re-parenting disabled in current security tier mode.</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Selected Department Deep Dive (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- OU Header Banner Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[30px]">shield</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Security Operations (SecOps)</h2>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container text-secondary uppercase tracking-wider">OU-SEC-004</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-container/20 text-on-secondary-container font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Tier 1 Critical
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                Parent Unit: <span class="font-semibold text-on-surface hover:underline cursor-pointer">SecureOrg Enterprise Root</span> • 
+                Created Oct 14, 2021
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-start">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+              Edit Unit
+            </button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+              Add Member
+            </button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-outline cursor-not-allowed font-label-md text-label-md" disabled="" title="Cannot delete OU with active members" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+              Delete
+            </button>
+</div>
+</div>
+<!-- Manager & Quick Metrics Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-sm">
+<div class="flex items-center gap-3 p-space-sm rounded-lg bg-surface-container-low">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Close up professional portrait of Elena Rostova, a cybersecurity executive woman with confident calm expression in modern office environment with subtle deep navy and slate tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEvy8KhcOm-VCmee0YF3eUv0bvHzS_PDSgYx9VRHaLlXx-w3bsXjWQiHydwsK29ywEKXecG7dR1wyf8IoaiqT_2EGfkBowDWgcykWazUn06Sf4zMftb6fyD4pOs_zULXG5Wp5-_hGsmAHmMcXxp1TQs4Egm3niUCtF8mf3ELu_X1GUuv9b2d33bJ85EThlY9s2i_KjvLiiooqQAvEVeohA9YTsa2EalZw33Q-GwUVn"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Unit Manager</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Elena Rostova</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">CISO Delegate / Lead</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sub-Units</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">3 Divisions</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Forensics, Intel, IAM</span>
+</div>
+<span class="material-symbols-outlined text-[24px] text-on-surface-variant">account_tree</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Privileged Access</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">12 Active Roles</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Zero Unaudited Grants</span>
+</div>
+<span class="material-symbols-outlined text-[24px] text-secondary">admin_panel_settings</span>
+</div>
+</div>
+</div>
+<!-- Nested Security Policies & Enforcement Rules Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-primary">policy</span>
+<div class="flex flex-col">
+<h3 class="font-title-lg text-title-lg text-primary">Nested Security Policies</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inherited from root or locally constrained for SecOps identities.</p>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:underline flex items-center gap-1 font-semibold" type="button">
+<span>Manage OU Policies</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Policy 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-secondary">Level 3 Strict</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">lock</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold leading-snug">Strict Hardware Token FIDO2</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Physical WebAuthn/FIDO2 hardware security keys mandatory for all OU workstations.
+              </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Enforced
+              </span>
+<span>Local OU Rule</span>
+</div>
+</div>
+<!-- Policy 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-secondary">Dual-Custody</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">supervisor_account</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold leading-snug">Dual Approval for Escalation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Elevating to root console access requires peer verification from an active SecOps lead.
+              </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Active
+              </span>
+<span>Local OU Rule</span>
+</div>
+</div>
+<!-- Policy 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-on-surface-variant"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-on-surface-variant">Root Baseline</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">timer</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold leading-snug">Session Timeout: 15 Mins</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Automatically terminates active administrative sessions on terminal inactivity.
+              </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span> Inherited
+              </span>
+<span>Enterprise Root</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sub-Units Department Table -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-primary">lan</span>
+<h3 class="font-title-lg text-title-lg text-primary">Department Sub-Units</h3>
+</div>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold hover:bg-surface-container px-2 py-1 rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+            Add Sub-Unit
+          </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l-lg">Sub-Unit Name</th>
+<th class="py-2.5 px-3">Lead Officer</th>
+<th class="py-2.5 px-3">Users</th>
+<th class="py-2.5 px-3">Security Posture</th>
+<th class="py-2.5 px-3 rounded-r-lg text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">security</span>
+<span class="font-semibold text-primary">Incident Response &amp; Forensics</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Headshot of a male security analyst with short dark hair in a navy collared shirt against a muted office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkgKIWrHqrG-UBCom3SB5lOd3zUOZm_Dcg2zgHbOCAcSTYM2EKn16E14VLkJcN90MV1So0jDQwC2TORCKsbAbyKT6zb9Ce0foOJadTeV7QnhTXBWKKtR8qTKZmaxRflAaXe-5R6bb1Omy8Xs-pcrX8brYm6MSV5AHDCTFIN-B6LFGXpBomLCM6kiW-1m9B5eMY0GOLiaXaM4Bfd9KaLn2PvgcHktqfS7GT_Z5PucpX"/>
+<span class="text-on-surface">Alex Mercer</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium">14 Members</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 99.4% Compliant
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">radar</span>
+<span class="font-semibold text-primary">Threat Intelligence &amp; Hunt</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait photo of a young professional woman with glasses and focused demeanor in an IT operations center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjqCKSelvUsToWfRuZg-gkYFtPq65738tM73FmS3A5svG9_t26gUtbI3EaqhZjJSj4ixSTfMGXWJy9NO6KVCWZt9Z9ipsvfk5RVX0hDG4hioB4DXh9J6LjeUU9zBfV94njvXEqIqVIZSDssyzxZgSRmsP_SeITP0MaMWQ0lZkMyBkKCeHHMYBAy3uUZqA12ToEaPrimVE5GebvygvQz0ayC9jDegM11F5Naq51omZl"/>
+<span class="text-on-surface">Priya Patel</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium">11 Members</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 98.8% Compliant
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">admin_panel_settings</span>
+<span class="font-semibold text-primary">Identity &amp; Access Governance</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Professional studio headshot of a mature security manager with silver hair and tailored suit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUdNbTkjPq6vFBZuKDrQs0Wi4YDWFnpaedJow7Ho7Pijjq13crXyY3SmIN8msJkoEaIrw-N1iLbrqp6THdspbGR-Ppac1EInPLj8J-RY1NPrrpkpS6fZdxpoqxt6aN6bb8oaI5rZuIeNudMDBYgJK5JGCS1Cf53LPQYo5a4gBWacOFv4Eq_UV1tJBWZBrlc6aMJffxl8I2-AUq2XX4Q-GCwTYcsYzOwiPwGLOPE1gm"/>
+<span class="text-on-surface">David Chen</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium">9 Members</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 100% Compliant
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Member Directory Preview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-primary">group</span>
+<div>
+<h3 class="font-title-lg text-title-lg text-primary">Assigned Personnel (SecOps)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing active directory bindings for this unit.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 5 of 34</span>
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold ml-2" type="button">
+              View All 34
+            </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l-lg">User</th>
+<th class="py-2.5 px-3">Direct Role</th>
+<th class="py-2.5 px-3">Sub-Assignment</th>
+<th class="py-2.5 px-3">MFA Status</th>
+<th class="py-2.5 px-3 rounded-r-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">
+                      ER
+                    </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-tight">Elena Rostova</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">e.rostova@secureorg.com</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium text-on-surface">Unit Lead / Org Admin</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant">
+                  SecOps Management
+                </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified_user</span> FIDO2 Hardware
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold" type="button">
+                    Manage Access
+                  </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md font-bold">
+                      AM
+                    </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-tight">Alex Mercer</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">a.mercer@secureorg.com</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium text-on-surface">Lead Forensics Engineer</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant">
+                  Incident Response
+                </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified_user</span> FIDO2 Hardware
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold" type="button">
+                    Manage Access
+                  </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-bold">
+                      PP
+                    </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-tight">Priya Patel</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">p.patel@secureorg.com</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium text-on-surface">Senior Threat Hunter</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant">
+                  Threat Intelligence
+                </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified_user</span> FIDO2 Hardware
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold" type="button">
+                    Manage Access
+                  </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-bold">
+                      DC
+                    </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-tight">David Chen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">d.chen@secureorg.com</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium text-on-surface">IAM Architect</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant">
+                  Access Governance
+                </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified_user</span> FIDO2 Hardware
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold" type="button">
+                    Manage Access
+                  </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-bold">
+                      SK
+                    </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-tight">Sarah Koenig</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">s.koenig@secureorg.com</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-medium text-on-surface">SOC Tier 2 Responder</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant">
+                  Incident Response
+                </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified_user</span> FIDO2 Hardware
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold" type="button">
+                    Manage Access
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const expandBtn = document.getElementById('expandAllBtn');
+    const collapseBtn = document.getElementById('collapseAllBtn');
+    
+    if (expandBtn) {
+      expandBtn.addEventListener('click', () => {
+        expandBtn.classList.add('text-secondary', 'font-semibold');
+        collapseBtn?.classList.remove('text-secondary', 'font-semibold');
+      });
+    }
+    
+    if (collapseBtn) {
+      collapseBtn.addEventListener('click', () => {
+        collapseBtn.classList.add('text-secondary', 'font-semibold');
+        expandBtn?.classList.remove('text-secondary', 'font-semibold');
+      });
+    }
+  });
+</script></main></div></body></html>

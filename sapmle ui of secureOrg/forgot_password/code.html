@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-primary-container": "#86a6d8",
+        "primary-container": "#173b67",
+        "surface-container-lowest": "#ffffff",
+        "on-primary": "#ffffff",
+        "error": "#ba1a1a",
+        "error-container": "#ffdad6",
+        "inverse-on-surface": "#ecf0ff",
+        "surface-bright": "#f9f9ff",
+        "outline-variant": "#c3c6d0",
+        "surface-dim": "#d0daf2",
+        "tertiary-fixed-dim": "#fab97e",
+        "on-error": "#ffffff",
+        "inverse-surface": "#273143",
+        "surface-container-highest": "#d9e3fb",
+        "on-secondary-fixed": "#001c39",
+        "secondary-fixed-dim": "#a4c9ff",
+        "on-primary-fixed-variant": "#264774",
+        "on-primary-fixed": "#001c3b",
+        "on-surface-variant": "#43474f",
+        "on-tertiary-container": "#d4975f",
+        "tertiary-container": "#593000",
+        "secondary-fixed": "#d4e3ff",
+        "on-error-container": "#93000a",
+        "background": "#f9f9ff",
+        "outline": "#737780",
+        "primary-fixed-dim": "#a8c8fc",
+        "surface-tint": "#3f5f8d",
+        "on-background": "#111c2d",
+        "tertiary-fixed": "#ffdcc0",
+        "surface-variant": "#d9e3fb",
+        "tertiary": "#3a1d00",
+        "secondary": "#2060a3",
+        "inverse-primary": "#a8c8fc",
+        "on-secondary-container": "#004681",
+        "secondary-container": "#80b6fe",
+        "on-tertiary-fixed": "#2d1600",
+        "primary-fixed": "#d5e3ff",
+        "on-secondary-fixed-variant": "#004883",
+        "surface": "#f9f9ff",
+        "on-secondary": "#ffffff",
+        "on-surface": "#111c2d",
+        "on-tertiary-fixed-variant": "#683c0b",
+        "primary": "#00254b",
+        "on-tertiary": "#ffffff",
+        "surface-container-low": "#f0f3ff",
+        "surface-container-high": "#dfe8ff",
+        "surface-container": "#e8eeff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-lg": "1.5rem",
+        "margin": "1.5rem",
+        "gutter": "1rem",
+        "space-md": "1rem",
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem",
+        "space-xl": "2rem"
+      },
+      "fontFamily": {
+        "title-md": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "title-lg": ["Inter"],
+        "label-sm": ["Inter"],
+        "body-sm": ["Inter"],
+        "label-md": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "label-lg": ["Inter"],
+        "body-md": ["Inter"],
+        "headline-sm": ["Inter"]
+      },
+      "fontSize": {
+        "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+        "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+      }
+    }
+  }
+};</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen relative flex flex-col justify-between selection:bg-secondary-container selection:text-on-secondary-container"><div class="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(#dfe8ff_1px,transparent_1px)] [background-size:24px_24px] opacity-60"></div><header class="relative z-10 w-full pt-space-xl pb-space-md px-margin flex flex-col items-center"><div class="flex items-center gap-space-sm mb-space-sm"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-on-primary text-[24px]">shield</span></div><span class="font-title-lg text-title-lg text-primary tracking-tight">SecureOrg</span></div><div class="flex flex-wrap items-center justify-center gap-space-sm mt-space-xs"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[14px] text-secondary">lock</span><span>256-Bit TLS Encryption</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span><span>SOC2 Compliant</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[14px] text-secondary">security</span><span>Zero-Trust Protocol</span></div></div></header><main class="relative z-10 w-full flex-1 flex flex-col items-center justify-center px-margin py-space-md"><div class="flex flex-col w-full items-center justify-center max-w-xl mx-auto">
+<!-- Notification / Demo State Success Banner -->
+<div class="w-full mb-space-md bg-surface-container-low rounded-xl p-space-md shadow-sm transition-all duration-300 flex items-start gap-space-sm" id="success-banner">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Security Dispatch Protocol Active</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TOKEN #4892-X</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+        If an active account matches these credentials, password reset instructions and an encrypted cryptographic link have been sent. Check your secure inbox.
+      </p>
+</div>
+<button aria-label="Dismiss banner" class="text-on-surface-variant hover:text-on-surface transition-colors p-1" onclick="document.getElementById('success-banner').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Main Recovery Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-md p-space-lg relative overflow-hidden">
+<!-- Subtle Background Accent Line -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary-container"></div>
+<!-- Header Section Inside Card -->
+<div class="flex flex-col items-center text-center mb-space-lg">
+<div class="relative mb-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-primary">vpn_key</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[14px] text-on-primary" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm mb-space-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock_reset</span>
+<span>Identity &amp; Access Governance</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface mt-1">Reset Your Credentials</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mt-space-xs">
+        Enter your registered corporate email or authorized employee identifier. If the account exists in the SecureOrg identity registry, a secure single-use recovery dispatch will be initiated.
+      </p>
+</div>
+<!-- Interactive Form -->
+<form class="space-y-space-md" id="recovery-form" onsubmit="event.preventDefault(); triggerDispatch();">
+<!-- Input Field -->
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface font-medium" for="identity-input">
+            Work Email or Employee ID
+          </label>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant transition-all duration-200" id="validation-pill">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span id="validation-text">Format Pending</span>
+</span>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<input autocomplete="username" class="w-full h-11 pl-11 pr-10 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:shadow-[0_0_0_2px] focus:shadow-secondary transition-all" id="identity-input" oninput="validateInput(this.value)" placeholder="e.g. alex.chen@secureorg.internal or EMP-9402" required="" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none opacity-0 transition-opacity duration-200 text-secondary" id="input-valid-icon">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+</div>
+<p class="mt-1 font-body-sm text-[12px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">help</span>
+<span>Dual-factor authorization prompt will follow on primary hardware key.</span>
+</p>
+</div>
+<!-- Verification Challenge Card (Enterprise Bot Mitigation) -->
+<div class="bg-surface-container rounded-lg p-space-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Security Check</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-primary font-label-sm text-[10px] uppercase font-bold">WAF v4.8</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+              Enterprise Bot Mitigation Token Verified
+            </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 text-secondary font-label-md text-label-md font-semibold bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-xs">
+<span>Active</span>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer group" id="submit-btn" type="submit">
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">send</span>
+<span>Dispatch Reset Link</span>
+</button>
+</form>
+<!-- Compliance & Zero-Knowledge Privacy Callout Box (Amber/Navy Tinted) -->
+<div class="mt-space-lg rounded-lg bg-tertiary-fixed/30 p-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">shield_person</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-md text-label-md text-on-tertiary-fixed font-semibold tracking-wide flex items-center gap-1">
+            Zero-Knowledge Privacy Safeguard
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            In accordance with enterprise zero-knowledge disclosure policies, this portal does not disclose whether an entered account exists or has active privileged status. All dispatch confirmations are processed through asynchronous isolated queuing.
+          </p>
+</div>
+</div>
+</div>
+<!-- Return Link -->
+<div class="mt-space-lg pt-space-md flex flex-col items-center justify-center gap-space-xs text-center">
+<a class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Return to Enterprise Login</span>
+</a>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+        Protected session identity ID: <span class="font-mono text-outline font-medium">SEC-092-A1</span>
+</span>
+</div>
+</div>
+<!-- Auxiliary Telemetry Card (Rich Visual Spark & Security Context) -->
+<div class="w-full mt-space-md grid grid-cols-1 sm:grid-cols-3 gap-space-sm text-center">
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col items-center justify-center shadow-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Latency SLA</span>
+<span class="font-title-md text-title-md text-primary font-mono mt-0.5">&lt; 140ms</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col items-center justify-center shadow-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Dispatch Cipher</span>
+<span class="font-title-md text-title-md text-primary font-mono mt-0.5">ChaCha20-Poly</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col items-center justify-center shadow-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Audit Logging</span>
+<span class="font-title-md text-title-md text-secondary font-mono mt-0.5">Immutable WORM</span>
+</div>
+</div>
+</div>
+<script>
+  function validateInput(val) {
+    const pill = document.getElementById('validation-pill');
+    const text = document.getElementById('validation-text');
+    const validIcon = document.getElementById('input-valid-icon');
+    const trimmed = val.trim();
+
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
+    const isEmployeeId = /^EMP-[0-9]{4,6}$/i.test(trimmed);
+
+    if (isEmail || isEmployeeId) {
+      pill.className = 'inline-flex items-center gap-1 text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container transition-all duration-200';
+      text.innerText = isEmail ? 'Valid Domain Address' : 'Valid Staff ID';
+      validIcon.classList.remove('opacity-0');
+      validIcon.classList.add('opacity-100');
+    } else if (trimmed.length > 0) {
+      pill.className = 'inline-flex items-center gap-1 text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant transition-all duration-200';
+      text.innerText = 'Evaluating Format...';
+      validIcon.classList.add('opacity-0');
+      validIcon.classList.remove('opacity-100');
+    } else {
+      pill.className = 'inline-flex items-center gap-1 text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant transition-all duration-200';
+      text.innerText = 'Format Pending';
+      validIcon.classList.add('opacity-0');
+      validIcon.classList.remove('opacity-100');
+    }
+  }
+
+  function triggerDispatch() {
+    const btn = document.getElementById('submit-btn');
+    const banner = document.getElementById('success-banner');
+    
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Encrypting &amp; Dispatching...</span>';
+    
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Dispatch Confirmed</span>';
+      banner.classList.remove('hidden');
+      banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 900);
+  }
+</script></main><footer class="relative z-10 w-full py-space-lg px-margin flex flex-col sm:flex-row items-center justify-center gap-space-md text-label-sm font-label-sm text-on-surface-variant"><span class="text-center">© 2024 SecureOrg Systems Inc. All rights reserved.</span><div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors" href="#">Security Policy</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Compliance &amp; Certifications</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">IT Support</a></div></footer></body></html>

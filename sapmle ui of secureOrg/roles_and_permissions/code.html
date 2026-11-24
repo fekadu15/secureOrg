@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>SecureOrg – Enterprise Security</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-container":"#d4975f","on-primary":"#ffffff","inverse-surface":"#273143","on-primary-fixed":"#001c3b","tertiary-container":"#593000","background":"#f9f9ff","surface-tint":"#3f5f8d","error":"#ba1a1a","surface-container-highest":"#d9e3fb","on-background":"#111c2d","on-secondary-fixed-variant":"#004883","surface-container":"#e8eeff","surface-container-high":"#dfe8ff","on-secondary-fixed":"#001c39","surface-dim":"#d0daf2","primary-container":"#173b67","primary-fixed-dim":"#a8c8fc","on-tertiary-fixed":"#2d1600","inverse-on-surface":"#ecf0ff","primary-fixed":"#d5e3ff","outline":"#737780","on-primary-container":"#86a6d8","on-error":"#ffffff","on-tertiary-fixed-variant":"#683c0b","secondary-container":"#80b6fe","tertiary-fixed":"#ffdcc0","secondary-fixed-dim":"#a4c9ff","secondary":"#2060a3","on-surface":"#111c2d","surface-bright":"#f9f9ff","tertiary-fixed-dim":"#fab97e","tertiary":"#3a1d00","on-secondary-container":"#004681","outline-variant":"#c3c6d0","inverse-primary":"#a8c8fc","primary":"#00254b","on-surface-variant":"#43474f","surface-container-low":"#f0f3ff","on-secondary":"#ffffff","error-container":"#ffdad6","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#264774","on-tertiary":"#ffffff","surface":"#f9f9ff","secondary-fixed":"#d4e3ff","surface-variant":"#d9e3fb","on-error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1.5rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2rem"},"fontFamily":{"title-lg":["Inter"],"body-sm":["Inter"],"title-md":["Inter"],"label-lg":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-low z-50 flex flex-col justify-between py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-md flex items-center gap-space-sm mb-space-lg"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary">SecureOrg</span><span class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Security</span></div></div><nav class="flex-1 overflow-y-auto px-space-sm space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Main</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Identity &amp; Access</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="users" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Users</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="organizational-units" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span>Organizational Units</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Roles &amp; Permissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="role-change-requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_ind</span><span>Role Change Requests</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="access-reviews" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Access Reviews</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Security Operations</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-alerts" href="#"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span>Security Alerts</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incidents" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidents</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="risk-register" href="#"><span class="material-symbols-outlined text-[20px]">gpp_maybe</span><span>Risk Register</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Resilience</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backup-and-recovery" href="#"><span class="material-symbols-outlined text-[20px]">backup</span><span>Backup &amp; Recovery</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">Governance</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-policies" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><span>Security Policies</span></a></div><div><div class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase text-on-surface-variant">System</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>My Profile</span></a></div></nav><div class="px-space-md pt-space-md"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-on-surface truncate">Marcus Vance</span><span class="inline-flex items-center px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Security Officer</span></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="SecureOrg Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBjVEzuXMhyIYQ7sn1Yqx4agc2I9DZImzGo_6ov2TbK5uhAgTbZy6Rm-cBhrEclKzpWpu2KF82tYwWDPpIkVWKvr3lFvp8xEnE1Gc1H5JCxj_WxoIxT3d8uHSldsjaW5gc5PcfVHL0Dj578tnT7NaGrvlkhNLlKri1TrOLRCxN_ZYrau_5zyYVhW1FiE4fM4umaqzxnDVJ3W3VrTUwvtH0hELqZY5sorlbjajTSDalm"/><span class="font-title-md text-title-md text-on-surface">SecureOrg</span></div><div class="flex items-center gap-space-md"><div class="relative hidden md:flex items-center"><span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3">search</span><input class="h-9 w-64 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none" placeholder="Search users, logs, policies..." type="search"/></div><span class="hidden lg:inline-block font-label-md text-label-md text-on-surface-variant">Oct 24, 2024</span><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute -top-1 -right-1 h-4 min-w-[16px] px-1 rounded-full bg-error text-on-error font-label-sm text-label-sm flex items-center justify-center">4</span></button><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJX_CAbbBrlFn2ypsw1EtWDOlEZApQMtrsqXQzXu7yT6VZNibS5EtYyPOgoMx9g0L60PrNwt8K_g9gdgJxcWYQE45u-aDOMCwydsBQBolj62T92h3s3YSguqxdG7mXkInaYaLERjKJSxBVl3ocMejtYads1F823kuvkndzhhPJSwzitO65fr8lizdI5cbuSj0MkWt8QYkuPoc33DaDR90KkqRROJ-2rb_hvzcfFc"/><div class="hidden sm:flex items-center gap-space-xs"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="my-profile" href="#">Profile</a><span class="text-on-surface-variant">/</span><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-path="login" href="#">Logout</a></div></div></div></header><main class="relative pt-16 bg-surface w-full px-8"><div class="flex flex-col w-full pb-space-xl">
+<!-- Page Header & Actions Bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md py-space-lg">
+<div class="flex flex-col gap-space-xs">
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Identity &amp; Access</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Roles &amp; Permissions</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Roles &amp; Permission Matrix</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Define role-based access control (RBAC), inspect cryptographically signed permission matrices, and enforce least-privilege architectural guarantees across operational enclaves.
+      </p>
+</div>
+<div class="flex items-center flex-wrap gap-space-sm self-start md:self-auto">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">lock</span>
+<span>System Default Roles Locked</span>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Audit Role Assignments</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_moderator</span>
+<span>+ Create Custom Role</span>
+</button>
+</div>
+</div>
+<!-- Immutable Policy Banner -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm mb-space-lg flex items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex items-center gap-space-md pl-space-xs">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary">System Core Security Roles Active</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Baseline system roles (Organization Administrator, Security Officer, Department Manager, Employee) are governed by immutable policy templates and cannot be deleted or re-keyed.
+        </span>
+</div>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1 text-secondary font-label-sm text-label-sm shrink-0">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+      Secured by Rule 4.1
+    </span>
+</div>
+<!-- Baseline Roles 4-Card Overview Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter mb-space-xl">
+<!-- Card 1: Org Admin -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all duration-150">
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container text-on-primary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+            Privileged Tier 1
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Immutable
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-primary">Org Administrator</h2>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-headline-md text-headline-md text-primary font-bold">12</span>
+<span class="font-label-md text-label-md text-on-surface-variant">assigned accounts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+          Full user management, OU delegation, baseline system settings, and automated backup operations. Cannot approve own elevated role grants.
+        </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-lg">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Active System Role
+        </span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline flex items-center gap-0.5" type="button">
+<span>Members</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Security Officer -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all duration-150">
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Privileged Tier 1
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Immutable
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">shield_person</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-primary">Security Officer</h2>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-headline-md text-headline-md text-primary font-bold">34</span>
+<span class="font-label-md text-label-md text-on-surface-variant">assigned accounts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+          Audit logs inspection, SIEM telemetry triage, incident containment, access certification execution, and independent privileged role approval.
+        </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-lg">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Active System Role
+        </span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline flex items-center gap-0.5" type="button">
+<span>Members</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Department Manager -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all duration-150">
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-highest text-on-secondary-fixed-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Standard Tier 2
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Immutable
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-primary">Department Manager</h2>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-headline-md text-headline-md text-primary font-bold">118</span>
+<span class="font-label-md text-label-md text-on-surface-variant">assigned accounts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+          Scoped OU staff supervision, localized access review attestation, unit-level role change request initiation, and first-line incident dispatch.
+        </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-lg">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Active System Role
+        </span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline flex items-center gap-0.5" type="button">
+<span>Members</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Employee -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all duration-150">
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+            Standard Tier 3
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Immutable
+          </span>
+</div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-primary">Employee</h2>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-headline-md text-headline-md text-primary font-bold">1,120</span>
+<span class="font-label-md text-label-md text-on-surface-variant">assigned accounts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+          Self profile &amp; security token maintenance, personal audit trail review, self-service access requests, and compliance policy acknowledgments.
+        </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-lg">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Active System Role
+        </span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline flex items-center gap-0.5" type="button">
+<span>Members</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Detailed Permission Matrix Workspace Card -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm flex flex-col overflow-hidden">
+<!-- Matrix Header with Controls & Category Tabs -->
+<div class="p-space-lg bg-surface-container-lowest flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Role-to-Capability Access Matrix</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Authoritative evaluation table reflecting compile-time RBAC policy trees and cryptographic delegations.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Legend Indicator Tags -->
+<div class="hidden xl:flex items-center gap-space-md mr-space-sm text-label-sm font-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+            Full Scope
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">security</span>
+            Scoped (OU Only)
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">remove_circle_outline</span>
+            Denied
+          </span>
+</div>
+<div class="relative">
+<input class="h-9 w-52 pl-8 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary" id="matrixFilterInput" oninput="filterMatrixRows()" placeholder="Filter permissions..." type="search"/>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute left-2.5 top-2.5">filter_alt</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Matrix</span>
+</button>
+</div>
+</div>
+<!-- Category Tabs Navigation -->
+<div class="flex items-center px-space-lg gap-space-xs overflow-x-auto bg-surface-container-low/40">
+<button class="category-tab active px-space-md py-3 font-label-md text-label-md font-semibold text-primary transition-colors whitespace-nowrap bg-surface-container-lowest rounded-t-lg" id="tab-all" onclick="switchCategory('all')" type="button">
+        All Capabilities (8)
+      </button>
+<button class="category-tab px-space-md py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" id="tab-secops" onclick="switchCategory('secops')" type="button">
+        Security Operations
+      </button>
+<button class="category-tab px-space-md py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" id="tab-identity" onclick="switchCategory('identity')" type="button">
+        Identity &amp; User Management
+      </button>
+<button class="category-tab px-space-md py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" id="tab-governance" onclick="switchCategory('governance')" type="button">
+        Governance &amp; Compliance
+      </button>
+<button class="category-tab px-space-md py-3 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" id="tab-system" onclick="switchCategory('system')" type="button">
+        System &amp; Resilience
+      </button>
+</div>
+<!-- Matrix Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="matrixTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-space-md px-space-lg w-2/5 min-w-[280px]" scope="col">Permission Name &amp; Description</th>
+<th class="py-space-md px-space-md text-center w-[15%] min-w-[140px]" scope="col">
+<div class="flex flex-col items-center">
+<span class="text-primary font-bold">Org Admin</span>
+<span class="font-label-sm text-label-sm normal-case text-outline">Tier 1</span>
+</div>
+</th>
+<th class="py-space-md px-space-md text-center w-[15%] min-w-[140px]" scope="col">
+<div class="flex flex-col items-center">
+<span class="text-primary font-bold">Security Officer</span>
+<span class="font-label-sm text-label-sm normal-case text-secondary">Tier 1 (SoD)</span>
+</div>
+</th>
+<th class="py-space-md px-space-md text-center w-[15%] min-w-[140px]" scope="col">
+<div class="flex flex-col items-center">
+<span class="text-primary font-bold">Dept Manager</span>
+<span class="font-label-sm text-label-sm normal-case text-outline">Tier 2</span>
+</div>
+</th>
+<th class="py-space-md px-space-md text-center w-[15%] min-w-[140px]" scope="col">
+<div class="flex flex-col items-center">
+<span class="text-primary font-bold">Employee</span>
+<span class="font-label-sm text-label-sm normal-case text-outline">Tier 3</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm">
+<!-- Row 1: users:create -->
+<tr class="matrix-row hover:bg-surface-container-low/70 transition-colors" data-category="identity">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">users:create</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Create and onboard enterprise user records, generate directory identities, and assign initial baseline roles.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Granted -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Sec Officer: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Dept Manager: Scoped -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px] text-secondary">security</span>
+<span>Scoped OU</span>
+</span>
+</td>
+<!-- Employee: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+</tr>
+<!-- Row 2: users:suspend -->
+<tr class="matrix-row bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors" data-category="identity">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">users:suspend</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Emergency account freeze, session invalidation, and programmatic credential revocation across all identity realms.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Granted -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Sec Officer: Granted -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Dept Manager: Denied -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Employee: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+</tr>
+<!-- Row 3: roles:approve_privileged -->
+<tr class="matrix-row bg-surface-container-low/20 hover:bg-surface-container-low/70 transition-colors" data-category="identity">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-error mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">roles:approve_privileged</span>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">SoD Critical</span>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Independent authorization and approval of elevated roles. Enforces cryptographic Separation of Duties checks.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Denied (SoD) -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<div class="flex flex-col items-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-error font-label-sm text-label-sm font-medium bg-error-container/40">
+<span class="material-symbols-outlined text-[15px]">block</span>
+<span>Restricted SoD</span>
+</span>
+<span class="font-label-sm text-[10px] text-outline mt-0.5">Self-Grant Prohibited</span>
+</div>
+</td>
+<!-- Sec Officer: Granted -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Sole Approver</span>
+</span>
+</td>
+<!-- Dept Manager: Denied -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Employee: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+</tr>
+<!-- Row 4: audit:view_tamper_evident -->
+<tr class="matrix-row bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors" data-category="secops">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">audit:view_tamper_evident</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Inspect cryptographic WORM (Write-Once-Read-Many) audit trails, cryptographic hash chains, and access proofs.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Denied (SoD) -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Sec Officer: Granted -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Full Ledger</span>
+</span>
+</td>
+<!-- Dept Manager: Denied -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Employee: Scoped (Own events) -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px] text-secondary">security</span>
+<span>Self Trail Only</span>
+</span>
+</td>
+</tr>
+<!-- Row 5: alerts:triage_and_resolve -->
+<tr class="matrix-row bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors" data-category="secops">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">alerts:triage_and_resolve</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Investigate high-fidelity security alerts, inspect SIEM telemetry, correlate behavioral anomalies, and dismiss false positives.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Denied -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Sec Officer: Granted -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Dept Manager: Denied -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Employee: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+</tr>
+<!-- Row 6: incidents:declare_and_contain -->
+<tr class="matrix-row bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors" data-category="secops">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">incidents:declare_and_contain</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Initiate major incident response runbooks, invoke emergency communications, and enforce perimeter lockouts.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Granted -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Sec Officer: Granted -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Dept Manager: Scoped (Report only) -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px] text-secondary">security</span>
+<span>Report Only</span>
+</span>
+</td>
+<!-- Employee: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+</tr>
+<!-- Row 7: backup:trigger_manual -->
+<tr class="matrix-row bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors" data-category="system">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">backup:trigger_manual</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Initiate isolated, air-gapped cryptographic database snapshot replication and off-site archive verification.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Granted -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Sec Officer: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Dept Manager: Denied -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+<!-- Employee: Denied -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-outline font-label-sm text-label-sm opacity-60">
+<span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>
+<span>Denied</span>
+</span>
+</td>
+</tr>
+<!-- Row 8: policies:acknowledge -->
+<tr class="matrix-row bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors" data-category="governance">
+<td class="py-space-md px-space-lg">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-mono font-medium">policies:acknowledge</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                    Digitally sign policy compliance mandates, read legal disclosures, and generate verifiable acknowledgment tokens.
+                  </span>
+</div>
+</div>
+</td>
+<!-- Org Admin: Granted -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Sec Officer: Granted -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Dept Manager: Granted -->
+<td class="py-space-md px-space-md text-center bg-surface-container-lowest/30">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+<!-- Employee: Granted -->
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Granted</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Explanatory SoD Footnote & Cryptographic Integrity Guarantee -->
+<div class="p-space-lg bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-4xl">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-semibold">
+            Separation of Duties (SoD) Rule 4.1 Enforced
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Users holding the <span class="font-semibold text-primary">Security Officer</span> role cannot simultaneously hold or be delegated the <span class="font-semibold text-primary">Organization Administrator</span> role within the same operational enclave. This prevents unilateral administrative overrides without independent audit oversight.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-start md:self-auto">
+<span class="font-label-sm text-label-sm text-outline">Policy Hash:</span>
+<code class="px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[11px] text-primary">sha256:e3b0c44...a928</code>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchCategory(category) {
+    const tabs = document.querySelectorAll('.category-tab');
+    tabs.forEach(tab => {
+      tab.classList.remove('active', 'bg-surface-container-lowest', 'text-primary', 'font-semibold');
+      tab.classList.add('text-on-surface-variant');
+    });
+
+    const activeTab = document.getElementById('tab-' + category);
+    if (activeTab) {
+      activeTab.classList.add('active', 'bg-surface-container-lowest', 'text-primary', 'font-semibold');
+      activeTab.classList.remove('text-on-surface-variant');
+    }
+
+    const rows = document.querySelectorAll('.matrix-row');
+    rows.forEach(row => {
+      const rowCategory = row.getAttribute('data-category');
+      if (category === 'all' || rowCategory === category) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function filterMatrixRows() {
+    const input = document.getElementById('matrixFilterInput');
+    const filter = input.value.toLowerCase();
+    const rows = document.querySelectorAll('.matrix-row');
+
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      if (text.includes(filter)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+</script></main></div></body></html>
